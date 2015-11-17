@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Register Umpire</title>
+		<title>TarneitCricketClub - Match Result</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -42,7 +42,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Register Umpire</h2>
+						<h2>Match Result</h2>
 					</header>
 				</div>
 			</section>
@@ -53,21 +53,46 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" readonly="readonly" />
-									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="coach_fname" id="coach_fname" value="" placeholder="First Name" />
-									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="coach_lname" id="coach_lname" value="" placeholder="Last Name" />
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Match Result ID" readonly="readonly" />
 									</div>
 									<div class="12u$">
-										<input type="date" name="coach_dob" id="coach_dob" value=""  />
+										<div class="select-wrapper">
+											<select name="match_outcome" id="match_outcome">
+												<option value="">- Match Outcome -</option>
+												<option value="1" >Win</option>
+												<option value="1" >Loss</option>
+												<option value="1" >Draw</option>
+											</select>
+										</div>
+									</div>		
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Tarneit Score" />
 									</div>
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Tarneit Overs" />
+									</div>
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Tarneit Wickets Lost" size="25"/>
+									</div>
+								</div>
+									
+								<div class="row uniform 100%">
+									
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Oppnonet Score"  />
+									</div>
+
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Opponent Overs"  />
+									</div>
+									<div class="">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Opponent Wickets Lost" size="25"/>
+									</div>
+
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Register"  /></li>
-											<li><input type="reset" value="Reset" class="special" /></li>
+											<li><input type="submit" value="Submit"  /></li>
+											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
 								</div>
