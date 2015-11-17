@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Login</title>
+		<title>TarneitCricketClub - Register Player</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 
-		<!-- Header -->
+	<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">TarneitCricketClub</a></h1>
 				<nav id="nav">
@@ -42,30 +42,55 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Login</h2>
-						
+						<h2>Register Player</h2>
 					</header>
-
-					<div class="container 100%">
-					<form action="#" method="post">
-						<div class="row uniform">
-							<div class="6u$ 12u$(small)">
-								<input name="email" id="email" value="" placeholder="Email" type="email">
-							</div>
-							<div class="6u 12u$(small)">
-								<p><input name="name" id="name" value="" placeholder="Password" type="text" password="password"></p>
-							</div>
-						
-							<div class="12u$">
-								<ul class="actions">
-									<li><input value="Login" class="special small	" type="submit"></li>
-								</ul>
-							</div>
-							
-						</div>
-					</form>
 				</div>
 			</section>
+			
+		<!-- Form -->
+						<section>
+							<form method="post" action="#">
+							<div class="container 100%">
+								<div class="row uniform 100%">
+									<div class="6u 12u$">
+										<input type="text" name="player_id" id="player_id" value="" placeholder="Player ID" readonly="readonly" />
+									</div>
+									<div class="6u 12u$(4)">
+										<input type="text" name="player_fname" id="player_fname" value="" placeholder="First Name" />
+									</div>
+									<div class="6u 12u$(4)">
+										<input type="text" name="player_lname" id="player_lname" value="" placeholder="Last Name" />
+									</div>
+									<div class="12u$">
+
+										<input type="date" name="player_dob" id="player_dob" value=""  />
+									</div>
+									<div class="12u$">
+										<input type="text" name="player_nationality" id="player_nationality" value="" placeholder="Nationality" />
+									</div>
+									
+									<div class="12u$">
+										<div class="select-wrapper">
+											<select name="role" id="player_role">
+												<option value="">- Select Role -</option>
+												<option value="1">Batsman</option>
+												<option value="1">Bowler</option>
+												<option value="1">Wicket Keeper</option>
+												<option value="1">All Rounder</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="12u$">
+										<ul class="actions">
+											<li><input type="submit" value="Register" class="special" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</form>
+						</section>
 
 		<!-- Footer -->
 			<footer id="footer">
