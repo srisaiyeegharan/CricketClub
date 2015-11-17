@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Register Umpire</title>
+		<title>TarneitCricketClub - New Series</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -42,7 +42,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Register Umpire</h2>
+						<h2>Create New Series</h2>
 					</header>
 				</div>
 			</section>
@@ -53,21 +53,29 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" readonly="readonly" />
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
 									</div>
 									<div class="6u 12u$(4)">
-										<input type="text" name="coach_fname" id="coach_fname" value="" placeholder="First Name" />
+										<input type="text" name="series_title" id="series_title" value="" placeholder="Series Title" />
+									</div>
+									<div class="6u 12u$">
+										<div class="select-wrapper">
+											<select name="game_type" id="game_type">
+												<option value="">- Select Game Type -</option>
+												<option value="1">ODI</option>
+												<option value="1">Test</option>
+												<option value="1">T20</option>
+											</select>
+										</div>
 									</div>
 									<div class="6u 12u$(4)">
-										<input type="text" name="coach_lname" id="coach_lname" value="" placeholder="Last Name" />
+										<input type="text" name="series_host" id="series_host" value="" placeholder="Host" />
 									</div>
-									<div class="12u$">
-										<input type="date" name="coach_dob" id="coach_dob" value=""  />
-									</div>
+									
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Register"  /></li>
-											<li><input type="reset" value="Reset" class="special" /></li>
+											<li><input type="submit" value="Create Series"  /></li>
+											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
 								</div>
