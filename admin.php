@@ -37,11 +37,11 @@
 					</header>
 
 					<div class="container 25%">
-						<a class="button fit" href="new_series.html">Create Series</a>
-						<a class="button fit" href="team.html">Add Team</a>
-						<a class="button fit" href="venue.html">Add Venue</a>
-						<a class="button fit" href="register_coach.html">Add Coach</a>
-						<a class="button fit" href="series.html">Add Scorecard</a>
+						<a class="button fit" href="new_series.php">Create Series</a>
+						<a class="button fit" href="team.php">Add Team</a>
+						<a class="button fit" href="venue.php">Add Venue</a>
+						<a class="button fit" href="register_coach.php">Add Coach</a>
+						<a class="button fit" href="series.php">Add Scorecard</a>
 						
 					</div>
 				</div>

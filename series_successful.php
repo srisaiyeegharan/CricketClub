@@ -37,8 +37,8 @@
 					</header>
 
 					<div class="container 25%">
-						<a class="button fit" href="matches.html">Add a Scorecard for current series</a>
-						<a class="button fit" href="admin.html">Club Management</a>
+						<a class="button fit" href="matches.php">Add a Scorecard for current series</a>
+						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
 				</div>
 			</section>
