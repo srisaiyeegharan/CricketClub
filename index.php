@@ -24,19 +24,8 @@
 	</head>
 	<body class="landing">
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">TarneitCricketClub</a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-						<li><a href="admin.html" >Club Management</a></li>
-						<li><a href="login.html" class="button special">Sign In</a></li>
-					</ul>
-				</nav>
-			</header>
+		<!-- Navigation -->
+			<?php require 'nav.php'; ?>
 
 		<!-- Banner -->
 			<section id="banner">
