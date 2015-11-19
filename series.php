@@ -37,8 +37,8 @@
 					</header>
 
 					<div class="container 25%">
-						<a class="button fit" href="new_series.html">New Series</a>
-						<a class="button fit" href="matches.html">Continue with Current Series</a>
+						<a class="button fit" href="new_series.php">New Series</a>
+						<a class="button fit" href="matches.php">Continue with Current Series</a>
 					</div>
 				</div>
 			</section>
