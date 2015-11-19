@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Admin</title>
+		<title>TarneitCricketClub - Login</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -42,52 +42,35 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Club Management</h2>
+						<h2>Login</h2>
 						
 					</header>
 
-					<div class="container 25%">
-						<a class="button fit" href="new_series.html">Create Series</a>
-						<a class="button fit" href="team.html">Add Team</a>
-						<a class="button fit" href="venue.html">Add Venue</a>
-						<a class="button fit" href="register_coach.html">Add Coach</a>
-						<a class="button fit" href="series.html">Add Scorecard</a>
+					<div class="container 100%">
+					<form action="#" method="post">
+						<div class="row uniform">
+							<div class="6u$ 12u$(small)">
+								<input name="email" id="email" value="" placeholder="Email" type="email">
+							</div>
+							<div class="6u 12u$(small)">
+								<p><input name="name" id="name" value="" placeholder="Password" type="text" password="password"></p>
+							</div>
 						
-					</div>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input value="Login" class="special small	" type="submit"></li>
+								</ul>
+							</div>
+							
+						</div>
+					</form>
 				</div>
 			</section>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					
-					<div class="row">
-						<div class="8u 12u$(medium)">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li>
-								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-							</ul>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<ul class="icons">
-								<li>
-									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<?php 
+				require 'footer.php'; 
+			?>
 
 	</body>
 </html>
