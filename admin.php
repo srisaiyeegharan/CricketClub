@@ -41,6 +41,7 @@
 						<a class="button fit" href="team.php">Add Team</a>
 						<a class="button fit" href="venue.php">Add Venue</a>
 						<a class="button fit" href="register_coach.php">Add Coach</a>
+						<a class="button fit" href="register_umpire.php">Add Umpire</a>
 						<a class="button fit" href="series.php">Add Scorecard</a>
 						
 					</div>
