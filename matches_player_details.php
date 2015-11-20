@@ -306,13 +306,14 @@
 									</div>
 									
 									
-									<!-- Team Two -->
+									<!-- Team Two 
 									
 									<div class="6u 12u$">
 										<input type="text" name="2team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
 									</div>
+									-->
 									
-									<!-- Player 1 --> 
+									<!-- Player 1
 									
 									</hr>
 									</br>
@@ -335,7 +336,7 @@
 										<input type="text" name="2player_one_bowled" id="player_one_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 2 --> 
+									 Player 2 
 									
 									</hr>
 									</br>
@@ -358,7 +359,7 @@
 										<input type="text" name="player_2_bowled" id="player_2_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 3 --> 
+									Player 3
 									
 									</hr>
 									</br>
@@ -381,7 +382,7 @@
 										<input type="text" name="player_3_bowled" id="player_3_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 4 --> 
+									Player 4  
 									
 									</hr>
 									</br>
@@ -404,7 +405,7 @@
 										<input type="text" name="player_4_bowled" id="player_4_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 5 --> 
+									 Player 5  
 									
 									</hr>
 									</br>
@@ -428,7 +429,7 @@
 									</div>
 
 									
-									<!-- Player 6 --> 
+									Player 6 
 									
 									</hr>
 									</br>
@@ -451,7 +452,7 @@
 										<input type="text" name="player_6_bowled" id="player_6_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 7 --> 
+									Player 7
 									
 									</hr>
 									</br>
@@ -474,7 +475,7 @@
 										<input type="text" name="player_7_bowled" id="player_7_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 8 --> 
+									Player 8
 									
 									</hr>
 									</br>
@@ -497,7 +498,7 @@
 										<input type="text" name="player_8_bowled" id="player_8_bowled" value="" placeholder="Wickets Taken"/>
 									</div>
 									
-									<!-- Player 9 --> 
+									Player 9 
 									
 									</hr>
 									</br>
@@ -521,7 +522,7 @@
 									</div>
 									
 									
-										<!-- Player 10 --> 
+									Player 10
 									
 									</hr>
 									</br>
@@ -545,7 +546,7 @@
 									</div>
 									
 									
-										<!-- Player 11 --> 
+									Player 11 
 									
 									</hr>
 									</br>

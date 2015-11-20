@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Venue</title>
+		<title>TarneitCricketClub - Player</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,8 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Venue has been succesfully created</h2>
-						
+						<h2>Role has been succesfully created</h2>
 					</header>
 					<?php 	
 						
@@ -46,12 +45,12 @@
 						} 
 						else 
 						{			
-						$sql_table="venue";		
+						$sql_table="role";		
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>Venue Code</th><th>Venue Name</th></tr>"; 
+						echo "<tr><th>Role Code</th><th>Role Description</th></tr>"; 
 						
-						$query = "SELECT VenueId, VenueName FROM $sql_table ";
+						$query = "SELECT RoleId, RoleDescription FROM $sql_table ";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
@@ -59,8 +58,8 @@
 					
 							while($row) 
 							{ 
-							echo "<tr><td>{$row['VenueId']}</td>"; 
-							echo "<td>{$row['VenueName']}</td></tr>"; 
+							echo "<tr><td>{$row['RoleId']}</td>"; 
+							echo "<td>{$row['RoleDescription']}</td></tr>"; 
 							$row = mysqli_fetch_assoc($result); 
 							} 
 							echo "</table>";

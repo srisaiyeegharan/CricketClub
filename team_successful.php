@@ -32,14 +32,49 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Team has been succesfully created</h2>
-						
+						<h2>Team has been succesfully created</h2>	
 					</header>
-
+				<?php 	
+						
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="team";		
+						$sql_table_two="coach";
+						
+						echo "<table border='1'>"; 
+						echo "<tr><th>Team ID</th><th>Team Name</th><th>Team Coach</th></tr>"; 
+						
+						$query = "SELECT TeamId, TeamName, CoachFirstName FROM $sql_table_one NATURAL JOIN $sql_table_two ";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['TeamId']}</td>"; 
+							echo "<td>{$row['TeamName']}</td>"; 
+							echo "<td>{$row['CoachFirstName']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						
+						?>	
+					<div>
 					<div class="container 25%">
 						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
-				</div>
+					</div>
 			</section>
 
 		<!-- Footer -->
