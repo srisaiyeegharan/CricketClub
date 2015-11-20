@@ -28,9 +28,9 @@
 			<?php require 'nav.php'; ?>
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="container">
-
+			<div class="container 100%">
+					<div class="row">
+					<div class="6u 12u(3)">
 					<header class="major">
 						<h2>Venue has been succesfully created</h2>
 						

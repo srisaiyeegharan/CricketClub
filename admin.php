@@ -52,6 +52,7 @@
 									<a class="button fit" href="register_coach.php">Register Coach</a>
 								</div>
 								</div>
+								<div class="row">
 								<div class="6u 12u(3)">
 									<h4>Create</h4>
 									<a class="button fit" href="new_series.php">Create Series</a>
@@ -59,7 +60,8 @@
 								</div>
 								<div class="6u 12u(3)">
 									<h4>Modify</h4>
-									<a class="button fit" href="new_series.php">Add Series Winner</a>
+									<a class="button fit" href="new_series.php">Enter Series Winner</a>
+								</div>
 								</div>
 							</div>
 					</div>
