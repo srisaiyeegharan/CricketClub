@@ -39,17 +39,17 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="team_successful.php">
+							<form method="post" action="team_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="team_name" id="team_name" value="" placeholder="Team Name" />
+										<input type="text" name="team_name" id="team_name" value="" placeholder="Team Name" required="required"/>									
 									</div>
 									<div class="6u 12u$(4)">
-										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" />
+										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" required="required" />
 									</div>
 								
 									<div class="12u$">
