@@ -59,15 +59,21 @@
 									<div class="6u 12u$">
 										
 									</div>
+									<div class="6u 12u$">
+										
 									</div>
-							</div>
-							</form>
+									
+									</div>
+							
+							
 							<div class="12u$">
 										<ul class="actions">
 											<li><input type="submit" value="Next - Umpires"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
-									</div>
+							</div>
+							</div>
+							</form>
 						</section>
 						</div>
 									
