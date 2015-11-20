@@ -38,20 +38,23 @@
 			</section>
 			
 		<!-- Form -->
+			<div class="container 100%">
+					<div class="row">
+					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="umpire_successful.php">
+							<form method="post" action="register_umpire_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="umpire_id" id="umpire_id" value="" placeholder="Umpire ID" readonly="readonly" />
 									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="umpire_fname" id="umpire_fname" value="" placeholder="First Name" />
+									<div class="6u 12u$">
+										<input type="text" name="umpire_fname" id="umpire_fname" value="" placeholder="First Name" required="required" />
 									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="umpire_lname" id="umpire_lname" value="" placeholder="Last Name" />
+									<div class="6u 12u$">
+										<input type="text" name="umpire_lname" id="umpire_lname" value="" placeholder="Last Name"  required="required"/>
 									</div>
-									<div class="12u$">
+									<div class="6u 12u$">
 										<input type="date" name="umpire_dob" id="umpire_dob" value=""  />
 									</div>
 									<div class="12u$">
@@ -59,11 +62,52 @@
 											<li><input type="submit" value="Register"  /></li>
 											<li><input type="reset" value="Reset" class="special" /></li>
 										</ul>
-									</div>
+									</	div>
 								</div>
 							</div>
 							</form>
 						</section>
+						</div>
+						
+						<?php 	
+						echo"<div class='6u 12u(3)'>";
+						echo"<h5>Stored umpires in our Database: </h5>";
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="umpire";		
+						
+						
+						echo "<table border='1'>"; 
+						echo "<tr><th>Umpire ID</th><th>First Name</th><th>Last Name</th></tr>"; 
+						
+						$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName FROM $sql_table_one";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['UmpireId']}</td>"; 
+							echo "<td>{$row['UmpireFirstName']}</td>"; 
+							echo "<td>{$row['UmpireLastName']}</td></tr>";
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						echo"</div>"
+						?>	
+						</div>
+						</div>
 
 		<!-- Footer -->
 			<?php 
