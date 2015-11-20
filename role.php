@@ -42,14 +42,14 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="role_successful.php">
+							<form method="post" action="role_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="role_id" id="role_id" value="" placeholder="Role ID"  />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="role_name" id="role_name" value="" placeholder="Role Name" />
+										<input type="text" name="role_name" id="role_name" value="" placeholder="Role Description" />
 									</div>				
 									<div class="12u$">
 										<ul class="actions">
