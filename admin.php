@@ -57,6 +57,10 @@
 									<a class="button fit" href="new_series.php">Create Series</a>
 									<a class="button fit" href="series.php">Create Scorecard</a>
 								</div>
+								<div class="6u 12u(3)">
+									<h4>Modify</h4>
+									<a class="button fit" href="new_series.php">Add Series Winner</a>
+								</div>
 							</div>
 					</div>
 				</div>
