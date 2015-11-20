@@ -66,8 +66,9 @@
 										while($row) 
 										{ 
 										echo"<div class='6u 12u$'>";
-													echo"<input type='text' name='player_id' id='player_id' value='Player ID: {$row['PlayerId']}'  readonly='readonly' />";
-										echo"</div>";
+													echo"<input type='text' name='player_id' id='player_id' value='{$row['PlayerId']}'  readonly='readonly' />";
+										echo"</div>";										
+										
 										$row = mysqli_fetch_assoc($result); 
 										} 
 									}
@@ -106,7 +107,7 @@
 									}
 									?>	
 									<div class="6u 12u$">
-										<input type="text" name="player_role_id" id="player_role_id" value="" placeholder="Role ID"  />
+										<input type="text" name="player_role_id" id="player_role_id" value="" placeholder="Role ID" required="required"  />
 									</div>
 									
 									<div class="12u$">
