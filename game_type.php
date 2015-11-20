@@ -38,12 +38,15 @@
 			</section>
 			
 		<!-- Form -->
+		<div class="container 100%">
+					<div class="row">
+					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="gametype_successful.php">
+							<form method="post" action="gametype_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="game_type_id" id="game_type_id" value="" placeholder="Game Type ID" readonly="readonly" />
+										<input type="text" name="game_type_id" id="game_type_id" value="" placeholder="Game Type ID" required="required" />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="game_type_name" id="game_type_name" value="" placeholder="Game Type Name" />
@@ -58,6 +61,48 @@
 							</div>
 							</form>
 						</section>
+						</div>
+						
+						<?php 	
+						echo"<div class='6u 12u(3)'>";
+						echo"<h5>Type of Games available: </h5>";
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="series_type";		
+						
+						
+						echo "<table border='1'>"; 
+						echo "<tr><th>Game ID</th><th>Game Name</th></tr>"; 
+						
+						$query = "SELECT SeriesTypeId, SeriesTypeName FROM $sql_table_one";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['SeriesTypeId']}</td>"; 
+							echo "<td>{$row['SeriesTypeName']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						echo"</div>"
+						?>	
+						
+			</div>
+		</div>
+
 
 		<!-- Footer -->
 			<?php require 'footer.php'; ?>
