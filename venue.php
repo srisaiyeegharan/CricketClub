@@ -43,7 +43,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="venue_id" id="venue_id" value="" placeholder="Venue ID" readonly="readonly" />
+										<input type="text" name="venue_id" id="venue_id" value="" placeholder="Venue ID"  />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="venue_name" id="venue_name" value="" placeholder="Venue Name" />

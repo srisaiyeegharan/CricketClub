@@ -32,16 +32,50 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Umpire has been succesfully created</h2>
-						
+						<h2>Umpire has been succesfully created</h2>	
 					</header>
-
+			<?php 	
+						
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table="umpire";		
+				
+						echo "<table border='1'>"; 
+						echo "<tr><th>Umpire ID</th><th>First Name</th><th>Last Name</th><th>Date Of Birth</th></tr>"; 
+						
+						$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName, UmpireDOB FROM $sql_table ";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['UmpireId']}</td>"; 
+							echo "<td>{$row['UmpireFirstName']}</td>"; 
+							echo "<td>{$row['UmpireLastName']}</td>"; 
+							echo "<td>{$row['UmpireDOB']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						
+						?>	
+					<div>
 					<div class="container 25%">
 						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
-				</div>
+					</div>
 			</section>
-
 		<!-- Footer -->
 			<?php 
 				require 'footer.php'; 

@@ -36,17 +36,28 @@
 						
 					</header>
 
-					<div class="container 25%">
-						<a class="button fit" href="new_series.php">Create Series</a>
-						<a class="button fit" href="team.php">Add Team</a>
-						<a class="button fit" href="venue.php">Add Venue</a>
-						<a class="button fit" href="register_coach.php">Register Coach</a>
-						<a class="button fit" href="register_umpire.php">Register Umpire</a>
-						<a class="button fit" href="role.php">Add Role</a>
-						<a class="button fit" href="register_player.php">Register Player</a>
-						<a class="button fit" href="game_type.php">Add Game Type</a>
-						<a class="button fit" href="series.php">Add Scorecard</a>
-						
+					<div class="container 50%">
+					<div class="row">
+								<div class="6u 12u(3)">
+									<h4>Add to TCC</h4>
+									<a class="button fit" href="team.php">Add Team</a>
+									<a class="button fit" href="venue.php">Add Venue</a>
+									<a class="button fit" href="role.php">Add Role</a>
+									<a class="button fit" href="game_type.php">Add Game Type</a>
+								</div>
+								<div class="6u 12u(3)">
+									<h4>Register</h4>
+									<a class="button fit" href="register_player.php">Register Player</a>
+									<a class="button fit" href="register_umpire.php">Register Umpire</a>
+									<a class="button fit" href="register_coach.php">Register Coach</a>
+								</div>
+								</div>
+								<div class="6u 12u(3)">
+									<h4>Create</h4>
+									<a class="button fit" href="new_series.php">Create Series</a>
+									<a class="button fit" href="series.php">Create Scorecard</a>
+								</div>
+							</div>
 					</div>
 				</div>
 			</section>

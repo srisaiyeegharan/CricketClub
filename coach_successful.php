@@ -33,13 +33,48 @@
 
 					<header class="major">
 						<h2>Coach has been succesfully created</h2>
-						
 					</header>
-
+					<?php 	
+						
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table="coach";		
+				
+						echo "<table border='1'>"; 
+						echo "<tr><th>Coach ID</th><th>First Name</th><th>Last Name</th><th>Date Of Birth</th></tr>"; 
+						
+						$query = "SELECT CoachId, CoachFirstName, CoachLastName, CoachDOB FROM $sql_table ";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['CoachId']}</td>"; 
+							echo "<td>{$row['CoachFirstName']}</td>"; 
+							echo "<td>{$row['CoachLastName']}</td>"; 
+							echo "<td>{$row['CoachDOB']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						
+						?>	
+					<div>
 					<div class="container 25%">
 						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
-				</div>
+					</div>
 			</section>
 
 		<!-- Footer -->

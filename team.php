@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Register Team</title>
+		<title>TarneitCricketClub - Add Team</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Register Team</h2>
+						<h2>Add Team</h2>
 					</header>
 				</div>
 			</section>
