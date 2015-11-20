@@ -42,7 +42,7 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="series_successful.php">
+							<form method="post" action="series_teams_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									
