@@ -46,7 +46,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="game_type_id" id="game_type_id" value="" placeholder="Game Type ID" readonly="readonly" />
+										<input type="text" name="game_type_id" id="game_type_id" value="" placeholder="Game Type ID" required="required" />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="game_type_name" id="game_type_name" value="" placeholder="Game Type Name" />
