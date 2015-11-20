@@ -38,18 +38,21 @@
 			</section>
 			
 		<!-- Form -->
+		<div class="container 100%">
+					<div class="row">
+					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="coach_successful.php">
+							<form method="post" action="register_coach_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" readonly="readonly" />
 									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="coach_fname" id="coach_fname" value="" placeholder="First Name" />
+									<div class="6u 12u$">
+										<input type="text" name="coach_fname" id="coach_fname" value="" placeholder="First Name" required="required" />
 									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="coach_lname" id="coach_lname" value="" placeholder="Last Name" />
+									<div class="6u 12u$">
+										<input type="text" name="coach_lname" id="coach_lname" value="" placeholder="Last Name" required="required"/>
 									</div>
 									<div class="12u$">
 										<input type="date" name="coach_dob" id="coach_dob" value=""  />
@@ -64,6 +67,48 @@
 							</div>
 							</form>
 						</section>
+						</div>
+						
+						
+						<?php 	
+						echo"<div class='6u 12u(3)'>";
+						echo"<h5>Stored Coaches in our Database: </h5>";
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="coach";		
+						
+						
+						echo "<table border='1'>"; 
+						echo "<tr><th>Coach ID</th><th>First Name</th><th>Last Name</th></tr>"; 
+						
+						$query = "SELECT CoachId, CoachFirstName, CoachLastName FROM $sql_table_one";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['CoachId']}</td>"; 
+							echo "<td>{$row['CoachFirstName']}</td>"; 
+							echo "<td>{$row['CoachLastName']}</td></tr>";
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						echo"</div>"
+						?>	
+						</div>
+						</div>
 
 		<!-- Footer -->
 			<?php 

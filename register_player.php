@@ -39,21 +39,21 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="register_player_role.php">
+							<form method="post" action="register_player_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="player_id" id="player_id" value="" placeholder="Player ID" readonly="readonly" />
+										<input type="text" name="player_id" id="player_id" value=""  readonly="readonly" />
 									</div>
 									<div class="6u 12u$(4)">
-										<input type="text" name="player_fname" id="player_fname" value="" placeholder="First Name" />
+										<input type="text" name="player_fname" id="player_fname" value="" placeholder="First Name" required="required"/>
 									</div>
 									<div class="6u 12u$(4)">
-										<input type="text" name="player_lname" id="player_lname" value="" placeholder="Last Name" />
+										<input type="text" name="player_lname" id="player_lname" value="" placeholder="Last Name" required="required" />
 									</div>
 									<div class="12u$">
-
-										<input type="date" name="player_dob" id="player_dob" value=""  />
+									<label for="player_dob">Date of Birth&#42; : <input type="date" name="player_dob" id="player_dob" value="" /></label>
+										
 									</div>
 									<div class="12u$">
 										<input type="text" name="player_nationality" id="player_nationality" value="" placeholder="Nationality" />
@@ -71,6 +71,45 @@
 							</div>
 							</form>
 						</section>
+						
+							
+						<?php 	
+						
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="player";		
+						
+						$query = "SELECT PlayerId, PlayerFirstName FROM $sql_table_one  ORDER BY PlayerId DESC LIMIT 1";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo"<div class='6u 12u$'>";
+										echo"<input type='text' name='player_id' id='player_ids' value='{$row['PlayerId']}'  readonly='readonly' />";
+							echo"</div>";
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							
+							
+							
+						}
+						mysqli_close($conn);
+						}
+						echo"</div>";
+						
+						
+						?>	
+						
 
 		<!-- Footer -->
 			<?php 
