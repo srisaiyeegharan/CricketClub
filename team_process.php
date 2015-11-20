@@ -55,18 +55,28 @@
 		if(isset($_POST["team_name"])) 
 			{
 			$teamname = sanitise($_POST["team_name"]);
-			
 			$coachid = sanitise($_POST["coach_id"]);
 			}
-		
-		
-		
-			$query = "INSERT INTO $sql_table (CoachId, TeamName) 
-			VALUES 
-			('$coachid', '$teamname')";
-			$result = mysqli_query($conn, $query);
 			
-			header("location:team_successful.php");
+			$query = "INSERT INTO $sql_table (CoachId, TeamName) VALUES ('$coachid', '$teamname')";
+			$result = mysqli_query($conn, $query);
+			if ($result)
+			{
+				header("location:team_successful.php");
+			}
+			else 
+			{
+				echo"<section id='main' class='wrapper'>";
+				echo"<div class='container'>";
+					echo"<header class='major'>";
+						echo"<h4>Please Select a Valid Coach ID</h4>";
+					echo"</header>";
+				echo"<div class='container 25%'>";
+				echo"<a class='button fit' href='team.php'>Add Team</a>";
+				echo"</div>";
+				//header("location:index.php");
+			}
+			
 			
 			mysqli_close($conn);
 		
