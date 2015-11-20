@@ -48,31 +48,31 @@
 	} 
 	else
 	{
-		$sql_table="role";
+		$sql_table="matches";
 		
 		
 		//check whether the form fields in the register form are set
-		if(isset($_POST["role_id"])) 
+		if(isset($_POST["series_id"])) 
 			{
-			$roleid = sanitise($_POST["role_id"]);
-			$rolename= sanitise($_POST["role_name"]);
+			$seriesid= sanitise($_POST["series_id"]);
+			$matchvenue= sanitise($_POST["match_venue"]);
 			}
 			
-			$query = "INSERT INTO $sql_table (RoleId, RoleDescription) VALUES ('$roleid', '$rolename')";
+			$query = "INSERT INTO $sql_table (SeriesId, VenueId) VALUES ('$seriesid', '$matchvenue')";
 			$result = mysqli_query($conn, $query);
 			if ($result)
 			{
-				header("location:role_successful.php");
+				header("location:matches_umpires.php");
 			}
 			else 
 			{
 				echo"<section id='main' class='wrapper'>";
 				echo"<div class='container'>";
 					echo"<header class='major'>";
-						echo"<h4>Please Enter a Non existing Role ID</h4>";
+						echo"<h4>Please Enter a valid Series and Venue IDs</h4>";
 					echo"</header>";
 				echo"<div class='container 25%'>";
-				echo"<a class='button fit' href='role.php'>Add Role</a>";
+				echo"<a class='button fit' href='matches.php'>Go Back</a>";
 				echo"</div>";
 				//header("location:index.php");
 			}

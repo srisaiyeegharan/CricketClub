@@ -42,18 +42,18 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="matches_umpires.php">
+							<form method="post" action="matches_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID"  />
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" required="required"  />
 									</div>
 									
 									<div class="6u 12u$">
-										<input type="text" name="match_venue" id="match_venue" value="" placeholder="Match Venue ID"  />
+										<input type="text" name="match_venue" id="match_venue" value="" placeholder="Match Venue ID"  required="required" />
 									</div>
 									
 									<div class="6u 12u$">
