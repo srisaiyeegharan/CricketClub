@@ -40,9 +40,10 @@
 						<a class="button fit" href="new_series.php">Create Series</a>
 						<a class="button fit" href="team.php">Add Team</a>
 						<a class="button fit" href="venue.php">Add Venue</a>
-						<a class="button fit" href="register_coach.php">Add Coach</a>
-						<a class="button fit" href="register_umpire.php">Add Umpire</a>
+						<a class="button fit" href="register_coach.php">Register Coach</a>
+						<a class="button fit" href="register_umpire.php">Register Umpire</a>
 						<a class="button fit" href="role.php">Add Role</a>
+						<a class="button fit" href="register_player.php">Register Player</a>
 						<a class="button fit" href="game_type.php">Add Game Type</a>
 						<a class="button fit" href="series.php">Add Scorecard</a>
 						
