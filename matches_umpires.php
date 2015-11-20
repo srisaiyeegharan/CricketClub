@@ -39,7 +39,7 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="#">
+							<form method="post" action="matches_team_details.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									
@@ -85,7 +85,7 @@
 
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Scorecard"  /></li>
+											<li><input type="submit" value="Next - Team Scorecard"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>

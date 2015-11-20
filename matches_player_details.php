@@ -39,7 +39,7 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="#">
+							<form method="post" action="scorecard_successful.php">
 							<div class="container 100%">
 								<div class="row uniform 50%">
 									<div class="6u 12u$">
@@ -572,7 +572,7 @@
 									<!-- submit -->
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Match Result"  /></li>
+											<li><input type="submit" value="Complete"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
