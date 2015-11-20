@@ -32,30 +32,38 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Venue</h2>
+						<h2>Match Details - Teams</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="matches_teams.php">
+							<form method="post" action="matches_umpires.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
-									<div class="6u 12u$">
-										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
-									</div>
+									
 									<div class="6u 12u$(4)">
 										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
 									</div>
+								
 									<div class="6u 12u$(4)">
-										<input type="text" name="series_name" id="series_name" value="" placeholder="Series Name" readonly="readonly" />
+										<div class="select-wrapper">
+											<select name="team_one" id="team_one">
+												<option value="">- Team One -</option>
+												<option value="1" >Tarneit Team </option>
+											</select>
+										</div>
 									</div>
 									
-									<div class="12u$">
+									<div class="6u 12u$(4)">
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
+									</div>
+									
+									<div class="6u 12u$(4)">
 										<div class="select-wrapper">
-											<select name="venue" id="venue">
-												<option value="">- Select Venue -</option>
+											<select name="team_two" id="team_two">
+												<option value="">- Team Two -</option>
 												<option value="1">Batsman</option>
 												<option value="1">Bowler</option>
 												<option value="1">Wicket Keeper</option>
@@ -63,11 +71,10 @@
 											</select>
 										</div>
 									</div>
-									
-
+								
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Teams"  /></li>
+											<li><input type="submit" value="Next - Umpires"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
