@@ -48,31 +48,31 @@
 	} 
 	else
 	{
-		$sql_table="team";
+		$sql_table="venue";
 		
 		
 		//check whether the form fields in the register form are set
-		if(isset($_POST["team_name"])) 
+		if(isset($_POST["venue_id"])) 
 			{
-			$teamname = sanitise($_POST["team_name"]);
-			$coachid = sanitise($_POST["coach_id"]);
+			$venueid = sanitise($_POST["venue_id"]);
+			$venuename= sanitise($_POST["venue_name"]);
 			}
 			
-			$query = "INSERT INTO $sql_table (CoachId, TeamName) VALUES ('$coachid', '$teamname')";
+			$query = "INSERT INTO $sql_table (VenueId, VenueName) VALUES ('$venueid', '$venuename')";
 			$result = mysqli_query($conn, $query);
 			if ($result)
 			{
-				header("location:team_successful.php");
+				header("location:venue_successful.php");
 			}
 			else 
 			{
 				echo"<section id='main' class='wrapper'>";
 				echo"<div class='container'>";
 					echo"<header class='major'>";
-						echo"<h4>Please Select a Valid Coach ID</h4>";
+						echo"<h4>Please Enter a Non existing Venue ID</h4>";
 					echo"</header>";
 				echo"<div class='container 25%'>";
-				echo"<a class='button fit' href='team.php'>Add Team</a>";
+				echo"<a class='button fit' href='venue.php'>Add Venue</a>";
 				echo"</div>";
 				//header("location:index.php");
 			}

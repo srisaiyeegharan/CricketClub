@@ -69,7 +69,7 @@
 						
 						<?php 	
 						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Available Coaches</h5>";
+						echo"<h5>Available Coaches to select from: </h5>";
 						require_once ("settings.php"); //connection info
 						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 						
