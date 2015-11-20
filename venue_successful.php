@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Admin</title>
+		<title>TarneitCricketClub - Venue</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,27 +32,18 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Club Management</h2>
+						<h2>Venue has been succesfully created</h2>
 						
 					</header>
 
 					<div class="container 25%">
-						<a class="button fit" href="new_series.php">Create Series</a>
-						<a class="button fit" href="team.php">Add Team</a>
-						<a class="button fit" href="venue.php">Add Venue</a>
-						<a class="button fit" href="register_coach.php">Register Coach</a>
-						<a class="button fit" href="register_umpire.php">Register Umpire</a>
-						<a class="button fit" href="role.php">Add Role</a>
-						<a class="button fit" href="register_player.php">Register Player</a>
-						<a class="button fit" href="game_type.php">Add Game Type</a>
-						<a class="button fit" href="series.php">Add Scorecard</a>
-						
+						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
 				</div>
 			</section>
 
 		<!-- Footer -->
-		<?php 
+			<?php 
 				require 'footer.php'; 
 			?>
 

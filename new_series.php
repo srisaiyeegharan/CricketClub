@@ -61,6 +61,9 @@
 									<div class="6u 12u$(4)">
 										<input type="text" name="series_host" id="series_host" value="" placeholder="Host" />
 									</div>
+									<div class="6u 12u$(4)">
+										<input type="text" name="series_winner" id="series_winner" value="" placeholder="Winner" />
+									</div>
 									
 									<div class="12u$">
 										<ul class="actions">

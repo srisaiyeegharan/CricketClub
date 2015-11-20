@@ -32,42 +32,60 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Venue</h2>
+						<h2>Match Details - Umpires</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="matches_teams.php">
+							<form method="post" action="#">
 							<div class="container 100%">
 								<div class="row uniform 100%">
-									<div class="6u 12u$">
+									
+									<div class="6u 12u$(4)">
 										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
 									</div>
+								
 									<div class="6u 12u$(4)">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
-									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="series_name" id="series_name" value="" placeholder="Series Name" readonly="readonly" />
-									</div>
-									
-									<div class="12u$">
 										<div class="select-wrapper">
-											<select name="venue" id="venue">
-												<option value="">- Select Venue -</option>
-												<option value="1">Batsman</option>
-												<option value="1">Bowler</option>
-												<option value="1">Wicket Keeper</option>
-												<option value="1">All Rounder</option>
+											<select name="umpire_one" id="umpire_one">
+												<option value="">- Umpire One -</option>
+												<option value="1" >Tarneit Team </option>
 											</select>
 										</div>
 									</div>
 									
+									
+									<div class="6u 12u$(4)">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
+									</div>
+								
+									<div class="6u 12u$(4)">
+										<div class="select-wrapper">
+											<select name="umpire_two" id="umpire_two">
+												<option value="">- Umpire Two -</option>
+												<option value="1" >Tarneit Team </option>
+											</select>
+										</div>
+									</div>
+								
+									<div class="6u 12u$(4)">
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
+									</div>
+								
+									<div class="6u 12u$(4)">
+										<div class="select-wrapper">
+											<select name="umpire_three" id="umpire_three">
+												<option value="">- Umpire Three -</option>
+												<option value="1" >Tarneit Team </option>
+											</select>
+										</div>
+									</div>
 
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Teams"  /></li>
+											<li><input type="submit" value="Next - Scorecard"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>

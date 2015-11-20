@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Register Player</title>
+		<title>TarneitCricketClub - New Scorecard</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 
-	<!-- Navigation -->
+<!-- Navigation -->
 			<?php require 'nav.php'; ?>
 
 		<!-- Main -->
@@ -32,42 +32,53 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Register Player</h2>
+						<h2>Match Details - Teams</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="register_player_role.php">
+							<form method="post" action="matches_umpires.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
-									<div class="6u 12u$">
-										<input type="text" name="player_id" id="player_id" value="" placeholder="Player ID" readonly="readonly" />
-									</div>
+									
 									<div class="6u 12u$(4)">
-										<input type="text" name="player_fname" id="player_fname" value="" placeholder="First Name" />
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
 									</div>
+								
 									<div class="6u 12u$(4)">
-										<input type="text" name="player_lname" id="player_lname" value="" placeholder="Last Name" />
-									</div>
-									<div class="12u$">
-
-										<input type="date" name="player_dob" id="player_dob" value=""  />
-									</div>
-									<div class="12u$">
-										<input type="text" name="player_nationality" id="player_nationality" value="" placeholder="Nationality" />
+										<div class="select-wrapper">
+											<select name="team_one" id="team_one">
+												<option value="">- Team One -</option>
+												<option value="1" >Tarneit Team </option>
+											</select>
+										</div>
 									</div>
 									
+									<div class="6u 12u$(4)">
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
+									</div>
 									
-
+									<div class="6u 12u$(4)">
+										<div class="select-wrapper">
+											<select name="team_two" id="team_two">
+												<option value="">- Team Two -</option>
+												<option value="1">Batsman</option>
+												<option value="1">Bowler</option>
+												<option value="1">Wicket Keeper</option>
+												<option value="1">All Rounder</option>
+											</select>
+										</div>
+									</div>
+								
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next"  /></li>
-											<li><input type="reset" value="Reset" class="special" /></li>
+											<li><input type="submit" value="Next - Umpires"  /></li>
+											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
-								</div>
+									
 							</div>
 							</form>
 						</section>
