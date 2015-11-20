@@ -62,7 +62,7 @@
 											<li><input type="submit" value="Register"  /></li>
 											<li><input type="reset" value="Reset" class="special" /></li>
 										</ul>
-									</	div>
+									</div>
 								</div>
 							</div>
 							</form>
