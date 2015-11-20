@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Register Team</title>
+		<title>TarneitCricketClub - Team</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 
-	<!-- Navigation -->
+		<!-- Navigation -->
 			<?php require 'nav.php'; ?>
 
 		<!-- Main -->
@@ -32,36 +32,15 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Register Team</h2>
+						<h2>Team has been succesfully created</h2>
+						
 					</header>
+
+					<div class="container 25%">
+						<a class="button fit" href="admin.php">Club Management</a>
+					</div>
 				</div>
 			</section>
-			
-		<!-- Form -->
-						<section>
-							<form method="post" action="team_successful.php">
-							<div class="container 100%">
-								<div class="row uniform 100%">
-									<div class="6u 12u$">
-										<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
-									</div>
-									<div class="6u 12u$">
-										<input type="text" name="team_name" id="team_name" value="" placeholder="Team Name" />
-									</div>
-									<div class="6u 12u$(4)">
-										<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" />
-									</div>
-								
-									<div class="12u$">
-										<ul class="actions">
-											<li><input type="submit" value="Register"  /></li>
-											<li><input type="reset" value="Reset" class="special" /></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							</form>
-						</section>
 
 		<!-- Footer -->
 			<?php 
