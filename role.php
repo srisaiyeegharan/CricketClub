@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Admin</title>
+		<title>TarneitCricketClub - Store a Role</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,36 +24,43 @@
 	</head>
 	<body>
 
-		<!-- Navigation -->
+	<!-- Navigation -->
 			<?php require 'nav.php'; ?>
-
+			
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
 
 					<header class="major">
-						<h2>Club Management</h2>
-						
+						<h2>Store a Role</h2>
 					</header>
-
-					<div class="container 25%">
-						<a class="button fit" href="new_series.php">Create Series</a>
-						<a class="button fit" href="team.php">Add Team</a>
-						<a class="button fit" href="venue.php">Add Venue</a>
-						<a class="button fit" href="register_coach.php">Add Coach</a>
-						<a class="button fit" href="register_umpire.php">Add Umpire</a>
-						<a class="button fit" href="role.php">Add Role</a>
-						<a class="button fit" href="gametype.php">Add Game Type</a>
-						<a class="button fit" href="series.php">Add Scorecard</a>
-						
-					</div>
 				</div>
 			</section>
+			
+		<!-- Form -->
+						<section>
+							<form method="post" action="#">
+							<div class="container 100%">
+								<div class="row uniform 100%">
+									<div class="6u 12u$">
+										<input type="text" name="role_id" id="role_id" value="" placeholder="Role ID"  />
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="role_name" id="role_name" value="" placeholder="Role Name" />
+									</div>				
+									<div class="12u$">
+										<ul class="actions">
+											<li><input type="submit" value="Register"  /></li>
+											<li><input type="reset" value="Reset" class="special" /></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</form>
+						</section>
 
 		<!-- Footer -->
-		<?php 
-				require 'footer.php'; 
-			?>
+			<?php require 'footer.php'; ?>
 
 	</body>
 </html>
