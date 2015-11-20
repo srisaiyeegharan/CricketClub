@@ -39,7 +39,7 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="series_successful.php">
+							<form method="post" action="series_teams.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">

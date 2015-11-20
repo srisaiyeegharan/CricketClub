@@ -32,14 +32,14 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Teams</h2>
+						<h2>Series - Teams</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="matches_umpires.php">
+							<form method="post" action="series_successful.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									
