@@ -130,7 +130,7 @@
 						}
 						mysqli_close($conn);
 						}
-						echo"</div>"
+						echo"</div>";
 						?>	
 						</div>
 						</div>
