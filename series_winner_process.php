@@ -58,7 +58,7 @@
 			$seriesid= sanitise($_POST["series_id"]);
 			}
 			
-			$query_one = "UPDATE $sql_table SET SeriesWinner = '$serieswinner' WHERE SeriesId = '$seriesid";
+			$query_one = "UPDATE $sql_table SET SeriesWinner = '$serieswinner' WHERE SeriesId = '$seriesid'";
 			
 			$result_one = mysqli_query($conn, $query_one);
 			
