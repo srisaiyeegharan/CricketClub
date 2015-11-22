@@ -42,18 +42,18 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="new_series_process.php">
+							<form method="post" action="series_winner_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID"  />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="series_winner" id="series_winner" value="" placeholder="Winner" />
 									</div>
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Teams"  /></li>
+											<li><input type="submit" value="Submit"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
