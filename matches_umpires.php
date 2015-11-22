@@ -42,7 +42,7 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="register_umpire_process.php">
+							<form method="post" action="matches_umpire_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<?php 	
@@ -76,15 +76,15 @@
 									}
 									?>
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_one" id="umpire_id_one" value="" placeholder="1st Umpire ID"  />
+										<input type="text" name="umpire_id_one" id="umpire_id_one" value="" placeholder="1st Umpire ID" required="required" />
 									</div>
 								
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_two" id="umpire_id_two" value="" placeholder="2nd Umpire ID"  />
+										<input type="text" name="umpire_id_two" id="umpire_id_two" value="" placeholder="2nd Umpire ID" required="required" />
 									</div>
 									
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_three" id="umpire_id_three" value="" placeholder="3rd Umpire ID"  />
+										<input type="text" name="umpire_id_three" id="umpire_id_three" value="" placeholder="3rd Umpire ID"   />
 									</div>
 									<div class="12u$">
 										<ul class="actions">
