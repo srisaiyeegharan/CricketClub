@@ -48,69 +48,44 @@
 	} 
 	else
 	{
-		$sql_table="match_umpire";
+		$sql_table="match_team_details";
 		
 		
 		//check whether the form fields in the register form are set
-		if(isset($_POST["umpire_id_one"])) 
+		if(isset($_POST["match_id"])) 
 			{
-			$umpireone = sanitise($_POST["umpire_id_one"]);
-			$umpiretwo= sanitise($_POST["umpire_id_two"]);
-			$umpirethree= sanitise($_POST["umpire_id_three"]);
 			$matchid= sanitise($_POST["match_id"]);
+			$teamoneid= sanitise($_POST["teamone_id"]);
+			$teamonescore= sanitise($_POST["teamone_score"]);
+			$teamoneovers= sanitise($_POST["teamone_overs"]);
+			$teamonewickets= sanitise($_POST["teamone_wickets"]);
+			$teamonetoss= sanitise($_POST["teamone_toss"]);
+			$teamonewon= sanitise($_POST["teamone_won"]);
+			$teamtwoid= sanitise($_POST["teamtwo_id"]);
+			$teamtwoscore= sanitise($_POST["teamtwo_score"]);
+			$teamtwoovers= sanitise($_POST["teamtwo_overs"]);
+			$teamtwowickets= sanitise($_POST["teamtwo_wickets"]);
+			$teamtwotoss= sanitise($_POST["teamtwo_toss"]);
+			$teamtwowon= sanitise($_POST["teamtwo_won"]);
 			}
 			
-			$query_one = "INSERT INTO $sql_table (MatchId, UmpireId) VALUES ('$matchid', '$umpireone')";
-			$query_two = "INSERT INTO $sql_table (MatchId, UmpireId) VALUES ('$matchid', '$umpiretwo')";
-			$query_three = "INSERT INTO $sql_table (MatchId, UmpireId) VALUES ('$matchid', '$umpirethree')";
+			$query_one = "INSERT INTO $sql_table (MatchId, TeamId, TeamToss, TeamScore, TeamOvers, TeamWickets, TeamWon) VALUES ('$matchid', '$teamoneid','$teamonetoss', '$teamonescore', '$teamoneovers', '$teamonewickets', '$teamonewon')";
+			$query_two = "INSERT INTO $sql_table (MatchId, TeamId, TeamToss, TeamScore, TeamOvers, TeamWickets, TeamWon) VALUES ('$matchid', '$teamtwoid','$teamtwotoss', '$teamtwoscore', '$teamtwoovers', '$teamtwowickets', '$teamtwowon')";
 			$result_one = mysqli_query($conn, $query_one);
-		
-			if ($result_one)
+			$result_two = mysqli_query($conn, $query_two);
+			if ($result_one && $result_two)
 			{
-				$result_two = mysqli_query($conn, $query_two);
-				if ($result_two)
-				{
-					$result_three = mysqli_query($conn, $query_three);
-					if (result_three)
-					{
-						header("location:matches_team_detailss.php");
-					}
-					else
-					{
-						echo"<section id='main' class='wrapper'>";
-						echo"<div class='container'>";
-						echo"<header class='major'>";
-						echo"<h4>Please Enter a valid Umpire ID</h4>";
-						echo"</header>";
-						echo"<div class='container 25%'>";
-						echo"<a class='button fit' href='matches_umpires.php'>Go Back</a>";
-						echo"</div>";
-					}
-					
-				}
-				else
-				{
-					echo"<section id='main' class='wrapper'>";
-					echo"<div class='container'>";
-					echo"<header class='major'>";
-					echo"<h4>Please Enter a valid Umpire ID</h4>";
-					echo"</header>";
-					echo"<div class='container 25%'>";
-					echo"<a class='button fit' href='matches_umpires.php'>Go Back</a>";
-					echo"</div>";
-					
-				}
-				
-			}	
+				header("location:matches_player_details.php");
+			}
 			else 
 			{
 				echo"<section id='main' class='wrapper'>";
 				echo"<div class='container'>";
-				echo"<header class='major'>";
-				echo"<h4>Please Enter a valid Umpire ID</h4>";
-				echo"</header>";
+					echo"<header class='major'>";
+						echo"<h4>Oops! seems like you did not enter something right!</h4>";
+					echo"</header>";
 				echo"<div class='container 25%'>";
-				echo"<a class='button fit' href='matches_umpires.php'>Go Back</a>";
+				echo"<a class='button fit' href='matches_team_details.php'>Go Back</a>";
 				echo"</div>";
 				//header("location:index.php");
 			}
