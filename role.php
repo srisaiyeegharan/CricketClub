@@ -38,15 +38,18 @@
 			</section>
 			
 		<!-- Form -->
+		<div class="container 100%">
+					<div class="row">
+					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="role_successful.php">
+							<form method="post" action="role_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
 										<input type="text" name="role_id" id="role_id" value="" placeholder="Role ID"  />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="role_name" id="role_name" value="" placeholder="Role Name" />
+										<input type="text" name="role_name" id="role_name" value="" placeholder="Role Description" />
 									</div>				
 									<div class="12u$">
 										<ul class="actions">
@@ -58,6 +61,48 @@
 							</div>
 							</form>
 						</section>
+						</div>
+						
+					
+						<?php 	
+						echo"<div class='6u 12u(3)'>";
+						echo"<h5>Stored Roles of players: </h5>";
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table_one="role";		
+						
+						
+						echo "<table border='1'>"; 
+						echo "<tr><th>Role ID</th><th>Description</th></tr>"; 
+						
+						$query = "SELECT RoleId, RoleDescription FROM $sql_table_one";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['RoleId']}</td>"; 
+							echo "<td>{$row['RoleDescription']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						echo"</div>"
+						?>	
+						
+			</div>
+		</div>
 
 		<!-- Footer -->
 			<?php require 'footer.php'; ?>

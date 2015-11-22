@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - Series</title>
+		<title>TarneitCricketClub - Game Type</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,15 +32,51 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Series has been succesfully created</h2>
-						
+						<h2>Series has been succesfully created</h2>	
 					</header>
-
+					<?php 	
+						
+						require_once ("settings.php"); //connection info
+						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+						
+						if (!$conn)
+						{
+							echo "<p>Database connection failure</p>"; // not in production script
+						} 
+						else 
+						{			
+						$sql_table="series";		
+				
+						echo "<table border='1'>"; 
+						echo "<tr><th>Series ID</th><th>Series Type</th><th>Series Title</th><th>Host</th><th>Winner</th></tr>"; 
+						
+						$query = "SELECT SeriesId, SeriesTypeId, SeriesName, SeriesHost, SeriesWinner FROM $sql_table ";
+										
+						$result = mysqli_query($conn, $query);
+						if($result){
+							$row = mysqli_fetch_assoc($result); 
+					
+							while($row) 
+							{ 
+							echo "<tr><td>{$row['SeriesId']}</td>"; 
+							echo "<td>{$row['SeriesTypeId']}</td>";
+							echo "<td>{$row['SeriesName']}</td>";
+							echo "<td>{$row['SeriesHost']}</td>";
+							echo "<td>{$row['SeriesWinner']}</td></tr>"; 
+							$row = mysqli_fetch_assoc($result); 
+							} 
+							echo "</table>";
+						}
+						mysqli_close($conn);
+						}
+						
+						?>	
+					<div>
 					<div class="container 25%">
-						<a class="button fit" href="matches.php">Add a Scorecard for current series</a>
+						<a class="button fit" href="matches.php">Add a scorecard for current series</a>
 						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
-				</div>
+					</div>
 			</section>
 
 		<!-- Footer -->

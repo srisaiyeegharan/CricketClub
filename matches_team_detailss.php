@@ -32,17 +32,17 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Umpires</h2>
+						<h2>Match Details - Team Scorecard</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
-				<div class="container 100%">
+		<div class="container 100%">
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="matches_umpire_process.php">
+							<form method="post" action="matches_team_detailss_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<?php 	
@@ -76,31 +76,89 @@
 									}
 									?>
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_one" id="umpire_id_one" value="" placeholder="1st Umpire ID" required="required" />
+										<input type="text" name="teamone_id" id="teamone_id" value="" placeholder="Team One ID"  />
 									</div>
-								
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_two" id="umpire_id_two" value="" placeholder="2nd Umpire ID" required="required" />
+										<input type="text" name="teamone_score" id="teamone_score" value="" placeholder="Team Score" />
 									</div>
-									
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_three" id="umpire_id_three" value="" placeholder="3rd Umpire ID"   />
+										<input type="text" name="teamone_overs" id="teamone_overs" value="" placeholder="Team Batted Overs" />
 									</div>
+									<div class="6u 12u$">
+										<input type="text" name="teamone_wickets" id="teamone_wickets" value="" placeholder="Team Wickets Lost" />
+									</div>
+									<div class="6u 12u$">
+										<div class="select-wrapper">
+											<select name="teamone_toss" id="teamone_toss">
+												<option value="">- Toss -</option>
+												<option value="Won">Toss - Win</option>
+												<option value="Lost">Toss - Lost</option>
+											</select>
+										</div>
+									</div>
+									<div class="6u 12u$">
+										<div class="select-wrapper">
+											<select name="teamone_won" id="teamone_won">
+												<option value="">- Outcome -</option>
+												<option value="Won">Outcome - Win</option>
+												<option value="Lost">Outcome - Lost</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row uniform 150%">
+								</div>
+								<div class="row uniform 100%">
+									<div class="6u 12u$">
+										
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="teamtwo_id" id="teamtwo_id" value="" placeholder="Team Two ID" />
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="teamtwo_score" id="teamtwo_score" value="" placeholder="Team Score" />
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="teamtwo_overs" id="teamtwo_overs" value="" placeholder="Team Batted Overs" />
+									</div>
+									<div class="6u 12u$)">
+										<input type="text" name="teamtwo_wickets" id="teamtwo_wickets" value="" placeholder="Team Wickets Lost" />
+									</div>
+									<div class="6u 12u$">
+										<div class="select-wrapper">
+											<select name="teamtwo_toss" id="teamtwo_toss">
+												<option value="">- Toss -</option>
+												<option value="Won">Toss - Win</option>
+												<option value="Lost">Toss - Lost</option>
+											</select>
+										</div>
+									</div>
+									<div class="6u 12u$">
+										<div class="select-wrapper">
+											<select name="teamtwo_won" id="teamtwo_won">
+												<option value="">- Outcome -</option>
+												<option value="Won">Outcome - Win</option>
+												<option value="Lost">Outcome - Lost</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row uniform 100%">
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Team Scorecard"  /></li>
+											<li><input type="submit" value="Next - Players Scorecard"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
+									
 								</div>
-							</div>
 							</form>
 						</section>
 						</div>
 						
 						<?php 	
 						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Stored umpires in our Database: </h5>";
+						echo"<h5>Available teams to select from </h5>";
 						require_once ("settings.php"); //connection info
 						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 						
@@ -110,13 +168,13 @@
 						} 
 						else 
 						{			
-						$sql_table_one="umpire";		
+						$sql_table_one="team";		
 						
 						
 						echo "<table border='1'>"; 
-						echo "<tr><th>Umpire ID</th><th>First Name</th><th>Last Name</th></tr>"; 
+						echo "<tr><th>Team ID</th><th>Team Name</th></tr>"; 
 						
-						$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName FROM $sql_table_one";
+						$query = "SELECT TeamId, TeamName FROM $sql_table_one";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
@@ -124,9 +182,8 @@
 					
 							while($row) 
 							{ 
-							echo "<tr><td>{$row['UmpireId']}</td>"; 
-							echo "<td>{$row['UmpireFirstName']}</td>"; 
-							echo "<td>{$row['UmpireLastName']}</td></tr>";
+							echo "<tr><td>{$row['TeamId']}</td>"; 
+							echo "<td>{$row['TeamName']}</td></tr>";
 							$row = mysqli_fetch_assoc($result); 
 							} 
 							echo "</table>";
@@ -135,8 +192,7 @@
 						}
 						echo"</div>"
 						?>	
-						</div>
-						</div>
+
 		<!-- Footer -->
 			<?php 
 				require 'footer.php'; 

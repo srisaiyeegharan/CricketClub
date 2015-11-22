@@ -51,7 +51,7 @@
 						echo "<table border='1'>"; 
 						echo "<tr><th>Team ID</th><th>Team Name</th><th>Team Coach</th></tr>"; 
 						
-						$query = "SELECT TeamId, TeamName, CoachFirstName FROM $sql_table_one NATURAL JOIN $sql_table_two ";
+						$query = "SELECT TeamId, TeamName, CoachFirstName FROM $sql_table_one NATURAL JOIN $sql_table_two ORDER BY TeamId DESC";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
