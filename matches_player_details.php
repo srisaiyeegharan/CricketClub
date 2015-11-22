@@ -39,14 +39,14 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="scorecard_successful.php">
+							<form method="post" action="matches_player_details_process.php">
 							<div class="container 100%">
 								<div class="row uniform 50%">
 									<div class="6u 12u$">
-										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
+										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
+										<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" />
 									</div>
 									
 									<!-- Player 1 --> 
@@ -54,7 +54,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos1" id="pos1" value="" placeholder="Batting Position: 1" readonly="readonly" />
+										<input type="text" name="pos1" id="pos1" value="1" placeholder="Batting Position: 1" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_one_id" id="player_one_id" value="" placeholder="player ID"/>
@@ -77,7 +77,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos2" id="pos2" value="" placeholder="Batting Position: 2" readonly="readonly" />
+										<input type="text" name="pos2" id="pos2" value="2" placeholder="Batting Position: 2" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_2_id" id="player_2_id" value="" placeholder="player ID"/>
@@ -100,7 +100,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos3" id="pos3" value="" placeholder="Batting Position: 3" readonly="readonly" />
+										<input type="text" name="pos3" id="pos3" value="3" placeholder="Batting Position: 3" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_3_id" id="player_3_id" value="" placeholder="player ID"/>
@@ -123,7 +123,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos4" id="pos4" value="" placeholder="Batting Position: 4" readonly="readonly" />
+										<input type="text" name="pos4" id="pos4" value="4" placeholder="Batting Position: 4" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_4_id" id="player_4_id" value="" placeholder="player ID"/>
@@ -146,7 +146,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos5" id="pos5" value="" placeholder="Batting Position: 5" readonly="readonly" />
+										<input type="text" name="pos5" id="pos5" value="5" placeholder="Batting Position: 5" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_5_id" id="player_5_id" value="" placeholder="player ID"/>
@@ -170,7 +170,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos6" id="pos6" value="" placeholder="Batting Position: 6" readonly="readonly" />
+										<input type="text" name="pos6" id="pos6" value="6" placeholder="Batting Position: 6" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_6_id" id="player_6_id" value="" placeholder="player ID"/>
@@ -193,7 +193,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos7" id="pos7" value="" placeholder="Batting Position: 7" readonly="readonly" />
+										<input type="text" name="pos7" id="pos7" value="7" placeholder="Batting Position: 7" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_7_id" id="player_7_id" value="" placeholder="player ID"/>
@@ -216,7 +216,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos8" id="pos8" value="" placeholder="Batting Position: 8" readonly="readonly" />
+										<input type="text" name="pos8" id="pos8" value="8" placeholder="Batting Position: 8" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_8_id" id="player_8_id" value="" placeholder="player ID"/>
@@ -239,7 +239,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos9" id="pos9" value="" placeholder="Batting Position: 9" readonly="readonly" />
+										<input type="text" name="pos9" id="pos9" value="9" placeholder="Batting Position: 9" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_9_id" id="player_9_id" value="" placeholder="player ID"/>
@@ -263,7 +263,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos10" id="pos10" value="" placeholder="Batting Position: 10" readonly="readonly" />
+										<input type="text" name="pos10" id="pos10" value="10" placeholder="Batting Position: 10" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_10_id" id="player_10_id" value="" placeholder="player ID"/>
@@ -287,7 +287,7 @@
 									</hr>
 									</br>
 									<div class="">
-										<input type="text" name="pos11" id="pos11" value="" placeholder="Batting Position: 11" readonly="readonly" />
+										<input type="text" name="pos11" id="pos11" value="11" placeholder="Batting Position: 11" readonly="readonly" />
 									</div>
 									<div class="">
 										<input type="text" name="player_11_id" id="player_11_id" value="" placeholder="player ID"/>
