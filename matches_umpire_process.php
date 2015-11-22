@@ -48,32 +48,34 @@
 	} 
 	else
 	{
-		$sql_table="umpire";
+		$sql_table="match_umpire";
 		
 		
 		//check whether the form fields in the register form are set
-		if(isset($_POST["umpire_id_one"])) 
+		if(isset($_POST["match_id"])) 
 			{
-			$umpirelname = sanitise($_POST["umpire_id_one"]);
-			$umpirefname= sanitise($_POST["umpire_id_two"]);
-			$umpiredob= sanitise($_POST["umpire_id_three"]);
+			$matchid= sanitise($_POST["match_id"]);
+			$umpireidone= sanitise($_POST["umpire_id_one"]);
+			$umpireidtwo= sanitise($_POST["umpire_id_two"]);
 			}
 			
-			$query = "INSERT INTO $sql_table (UmpireFirstName, UmpireLastName, UmpireDOB) VALUES ('$umpirefname', '$umpirelname', '$umpiredob')";
-			$result = mysqli_query($conn, $query);
-			if ($result)
+			$query_one = "INSERT INTO $sql_table (MatchId, UmpireId) VALUES ('$matchid', '$umpireidone')";
+			$query_two = "INSERT INTO $sql_table (MatchId, UmpireId) VALUES ('$matchid', '$umpireidtwo')";
+			$result_one = mysqli_query($conn, $query_one);
+			$result_two = mysqli_query($conn, $query_two);
+			if ($result_one && $result_two)
 			{
-				header("location:umpire_successful.php");
+				header("location:matches_team_details.php");
 			}
 			else 
 			{
 				echo"<section id='main' class='wrapper'>";
 				echo"<div class='container'>";
 					echo"<header class='major'>";
-						echo"<h4>Please Enter a Non existing Venue ID</h4>";
+						echo"<h4>Please Enter a valid umpire IDs</h4>";
 					echo"</header>";
 				echo"<div class='container 25%'>";
-				echo"<a class='button fit' href='venue.php'>Add Venue</a>";
+				echo"<a class='button fit' href='matches.php'>Go Back</a>";
 				echo"</div>";
 				//header("location:index.php");
 			}

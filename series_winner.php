@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - New Scorecard</title>
+		<title>TarneitCricketClub - New Series</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 
-<!-- Navigation -->
+	<!-- Navigation -->
 			<?php require 'nav.php'; ?>
 
 		<!-- Main -->
@@ -32,60 +32,37 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Umpires</h2>
+						<h2>Create New Series</h2>
 					</header>
 				</div>
 			</section>
 			
 		<!-- Form -->
-				<div class="container 100%">
+		<div class="container 100%">
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="matches_umpire_process.php">
+							<form method="post" action="new_series_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
-									<?php 	
-									require_once ("settings.php"); //connection info
-									$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-									
-									if (!$conn)
-									{
-										echo "<p>Database connection failure</p>"; // not in production script
-									} 
-									else 
-									{			
-									$sql_table_one="matches";		
-									
-									$query = "SELECT MatchId FROM $sql_table_one  ORDER BY MatchId DESC LIMIT 1";
-													
-									$result = mysqli_query($conn, $query);
-									if($result){
-										$row = mysqli_fetch_assoc($result); 
-								
-										while($row) 
-										{ 
-										echo"<div class='6u 12u$'>";
-													echo"<input type='text' name='match_id' id='match_id' value='{$row['MatchId']}'  readonly='readonly' />";
-										echo"</div>";										
-										
-										$row = mysqli_fetch_assoc($result); 
-										} 
-									}
-									mysqli_close($conn);
-									}
-									?>
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_one" id="umpire_id_one" value="" placeholder="1st Umpire ID" required="required" />
+										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
 									</div>
-								
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id_two" id="umpire_id_two" value="" placeholder="2nd Umpire ID" required="required"  />
+										<input type="text" name="series_title" id="series_title" value="" placeholder="Series Title" required="required" />
 									</div>
-								
+									<div class="6u 12u$">
+										<input type="text" name="series_game_type" id="series_game_type" value="" placeholder="Series Game ID" required="required"/>
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="series_host" id="series_host" value="" placeholder="Host" required="required"/>
+									</div>
+									<div class="6u 12u$">
+										<input type="text" name="series_winner" id="series_winner" value="" placeholder="Winner" />
+									</div>
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Team Scorecard"  /></li>
+											<li><input type="submit" value="Next - Teams"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>
@@ -97,7 +74,7 @@
 						
 						<?php 	
 						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Stored umpires in our Database: </h5>";
+						echo"<h5>Type of Games available: </h5>";
 						require_once ("settings.php"); //connection info
 						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 						
@@ -107,13 +84,13 @@
 						} 
 						else 
 						{			
-						$sql_table_one="umpire";		
+						$sql_table_one="series_type";		
 						
 						
 						echo "<table border='1'>"; 
-						echo "<tr><th>Umpire ID</th><th>First Name</th><th>Last Name</th></tr>"; 
+						echo "<tr><th>Game ID</th><th>Game Name</th></tr>"; 
 						
-						$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName FROM $sql_table_one";
+						$query = "SELECT SeriesTypeId, SeriesTypeName FROM $sql_table_one";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
@@ -121,9 +98,8 @@
 					
 							while($row) 
 							{ 
-							echo "<tr><td>{$row['UmpireId']}</td>"; 
-							echo "<td>{$row['UmpireFirstName']}</td>"; 
-							echo "<td>{$row['UmpireLastName']}</td></tr>";
+							echo "<tr><td>{$row['SeriesTypeId']}</td>"; 
+							echo "<td>{$row['SeriesTypeName']}</td></tr>"; 
 							$row = mysqli_fetch_assoc($result); 
 							} 
 							echo "</table>";
@@ -132,12 +108,15 @@
 						}
 						echo"</div>"
 						?>	
-						</div>
-						</div>
+						
+			</div>
+		</div>
+
 		<!-- Footer -->
-			<?php 
-				require 'footer.php'; 
-			?>
+		
+		<?php 
+			require 'footer.php'; 
+		?>
 
 	</body>
 </html>
