@@ -65,7 +65,7 @@
 							echo "<td>{$row['SeriesName']}</td>";
 							echo "<td>{$row['SeriesHost']}</td>";
 							echo "<td>{$row['SeriesWinner']}</td>";
-							echo "<td>{$row['TeamName']}</td>";
+							echo "<td>{$row['TeamName']}</td>";	
 							$row = mysqli_fetch_assoc($result); 
 							echo "<td>{$row['TeamName']}</td></tr>"; 
 							} 
