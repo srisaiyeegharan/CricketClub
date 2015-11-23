@@ -52,8 +52,31 @@
 										<input type="text" name="series_title" id="series_title" value="" placeholder="Series Title" required="required" />
 									</div>
 									<div class="6u 12u$">
-										<input type="text" name="series_game_type" id="series_game_type" value="" placeholder="Series Game ID" required="required"/>
-									</div>
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="series_type";
+														$query = "SELECT SeriesTypeId, SeriesTypeName FROM $sql_table_one";
+
+														echo "<select name='series_game_type'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Series Type</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['SeriesTypeId']}'>{$row['SeriesTypeId']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
 									<div class="6u 12u$">
 										<input type="text" name="series_host" id="series_host" value="" placeholder="Host" required="required"/>
 									</div>
