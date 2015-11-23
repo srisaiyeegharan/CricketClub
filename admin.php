@@ -61,6 +61,7 @@
 								<div class="6u 12u(3)">
 									<h4>Modify</h4>
 									<a class="button fit" href="series_winner.php">Enter Series Winner</a>
+									<a class="button fit" href="modify_player_role.php">Add Role for Player</a>
 								</div>
 								</div>
 								<div class="row">
