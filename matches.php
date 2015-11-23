@@ -48,14 +48,62 @@
 									<div class="6u 12u$">
 										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
 									</div>
-									<div class="6u 12u$">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" required="required"  />
-									</div>
+									
+										<div class="6u 12u$">
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="series";
+														$query = "SELECT SeriesId, SeriesName  FROM $sql_table_one";
+
+														echo "<select name='series_id'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Series</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['SeriesId']}'>{$row['SeriesName']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
+									
 									
 									<div class="6u 12u$">
-										<input type="text" name="match_venue" id="match_venue" value="" placeholder="Match Venue ID"  required="required" />
-									</div>
-									
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="venue";
+														$query = "SELECT VenueId, VenueName  FROM $sql_table_one";
+
+														echo "<select name='match_venue'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Venue</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['VenueId']}'>{$row['VenueName']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
+																	
 									<div class="6u 12u$">
 										
 									</div>
