@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Series has been succesfully created</h2>	
+						<h2>Series</h2>	
 					</header>
 					<?php 	
 						
@@ -75,12 +75,7 @@
 						}
 						
 						?>	
-					<div>
-					<div class="container 25%">
-						<a class="button fit" href="matches.php">Add a scorecard for current series</a>
-						<a class="button fit" href="admin.php">Club Management</a>
-					</div>
-					</div>
+					
 			</section>
 
 		<!-- Footer -->

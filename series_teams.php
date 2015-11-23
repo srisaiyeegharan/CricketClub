@@ -76,14 +76,63 @@
 									mysqli_close($conn);
 									}
 									?>
-								
 									<div class="6u 12u$">
-										<input type="text" name="team_one" id="team_one" value="" placeholder="Team One ID" required="required"/>
-									</div>
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="team";
+														$sql_table_two="coach";
+														
+														$query = "SELECT TeamId, TeamName, CoachFirstName, CoachLastName FROM $sql_table_one NATURAL JOIN $sql_table_two " ;
+
+														echo "<select name='team_one'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Team One</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['TeamId']}'>{$row['TeamName']} - {$row['CoachFirstName']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
+									<div class="6u 12u$">
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="team";
+														$sql_table_two="coach";
+														
+														$query = "SELECT TeamId, TeamName, CoachFirstName, CoachLastName FROM $sql_table_one NATURAL JOIN $sql_table_two " ;
+
+														echo "<select name='team_two'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Team One</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['TeamId']}'>{$row['TeamName']} - {$row['CoachFirstName']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
 									
-									<div class="6u 12u$">
-										<input type="text" name="team_two" id="team_two" value="" placeholder="Team Two ID" required="required"/>
-									</div>
 								
 									<div class="12u$">
 										<ul class="actions">
