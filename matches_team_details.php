@@ -76,8 +76,50 @@
 									}
 									?>
 									<div class="6u 12u$">
-										<input type="text" name="teamone_id" id="teamone_id" value="" placeholder="Team One ID"  />
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="matches";		
+									
+															$query_one = "SELECT MatchId FROM $sql_table_one  ORDER BY MatchId DESC LIMIT 1";
+																			
+															$result = mysqli_query($conn, $query_one);
+															if($result){
+																$row = mysqli_fetch_assoc($result); 
+														
+																while($row) 
+																{ 
+															
+																	$query = "SELECT TeamId, TeamName FROM matches m NATURAL JOIN series s NATURAL JOIN team_series ts NATURAL JOIN team t WHERE m.MatchId = '{$row['MatchId']}';";
+
+																	echo "<select name='teamone_id'>";											
+																	$result = mysqli_query($conn, $query);
+																	echo "<option value='0'>Select Team One</option>";
+																	if($result)
+																	{
+																		while($row = mysqli_fetch_assoc($result)) 
+																			{ 
+																			echo "<option value='{$row['TeamId']}'>{$row['TeamName']}</option>";
+																			} 
+																	}	
+																
+																			
+																
+																$row = mysqli_fetch_assoc($result); 
+																} 
+															}
+														
+													
+												?>
+									</select>
 									</div>
+									
 									<div class="6u 12u$">
 										<input type="text" name="teamone_score" id="teamone_score" value="" placeholder="Team Score" />
 									</div>
@@ -112,9 +154,52 @@
 									<div class="6u 12u$">
 										
 									</div>
+																		
 									<div class="6u 12u$">
-										<input type="text" name="teamtwo_id" id="teamtwo_id" value="" placeholder="Team Two ID" />
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="matches";		
+									
+															$query_one = "SELECT MatchId FROM $sql_table_one  ORDER BY MatchId DESC LIMIT 1";
+																			
+															$result = mysqli_query($conn, $query_one);
+															if($result){
+																$row = mysqli_fetch_assoc($result); 
+														
+																while($row) 
+																{ 
+															
+																	$query = "SELECT TeamId, TeamName FROM matches m NATURAL JOIN series s NATURAL JOIN team_series ts NATURAL JOIN team t WHERE m.MatchId = '{$row['MatchId']}';";
+
+																	echo "<select name='teamtwo_id'>";											
+																	$result = mysqli_query($conn, $query);
+																	echo "<option value='0'>Select Team Two</option>";
+																	if($result)
+																	{
+																		while($row = mysqli_fetch_assoc($result)) 
+																			{ 
+																			echo "<option value='{$row['TeamId']}'>{$row['TeamName']}</option>";
+																			} 
+																	}	
+																
+																			
+																
+																$row = mysqli_fetch_assoc($result); 
+																} 
+															}
+														
+													
+												?>
+									</select>
 									</div>
+									
 									<div class="6u 12u$">
 										<input type="text" name="teamtwo_score" id="teamtwo_score" value="" placeholder="Team Score" />
 									</div>
