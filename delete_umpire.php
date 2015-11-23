@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - New Scorecard</title>
+		<title>TarneitCricketClub</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Umpires</h2>
+						<h2>Remove Umpire</h2>
 					</header>
 				</div>
 			</section>
@@ -42,39 +42,10 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="matches_umpire_process.php">
+							<form method="post" action="delete_umpire_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
-									<?php 	
-									require_once ("settings.php"); //connection info
-									$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 									
-									if (!$conn)
-									{
-										echo "<p>Database connection failure</p>"; // not in production script
-									} 
-									else 
-									{			
-									$sql_table_one="matches";		
-									
-									$query = "SELECT MatchId FROM $sql_table_one  ORDER BY MatchId DESC LIMIT 1";
-													
-									$result = mysqli_query($conn, $query);
-									if($result){
-										$row = mysqli_fetch_assoc($result); 
-								
-										while($row) 
-										{ 
-										echo"<div class='6u 12u$'>";
-													echo"<input type='text' name='match_id' id='match_id' value='{$row['MatchId']}'  readonly='readonly' />";
-										echo"</div>";										
-										
-										$row = mysqli_fetch_assoc($result); 
-										} 
-									}
-									mysqli_close($conn);
-									}
-									?>
 									
 									<div class="6u 12u$">
 												<?php
@@ -91,7 +62,7 @@
 
 														echo "<select name='umpire_id_one'>";											
 														$result = mysqli_query($conn, $query);
-														echo "<option value='0'>Select 1st Umpire</option>";
+														echo "<option value='0'>Delete Umpire</option>";
 														if($result)
 														{
 															while($row = mysqli_fetch_assoc($result)) 
@@ -102,39 +73,13 @@
 												?>
 									</select>
 									</div>
-									
-									<div class="6u 12u$">
-												<?php
-													require_once ("settings.php"); //connection info
-													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-													
-													if (!$conn)
-													{
-														echo "<p>Database connection failure</p>"; // not in production script
-														die();
-													}
-														$sql_table_one="umpire";
-														$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName  FROM $sql_table_one";
-
-														echo "<select name='umpire_id_two'>";											
-														$result = mysqli_query($conn, $query);
-														echo "<option value='0'>Select 2nd Umpire</option>";
-														if($result)
-														{
-															while($row = mysqli_fetch_assoc($result)) 
-															{ 
-															echo "<option value='{$row['UmpireId']}'>{$row['UmpireFirstName']} {$row['UmpireLastName']}</option>";
-															} 
-														}	
-												?>
-									</select>
-									</div>
+								
 									
 									
 								
 									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Team Scorecard"  /></li>
+											<li><input type="submit" value="Delete"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
 									</div>

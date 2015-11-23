@@ -7,7 +7,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>TarneitCricketClub - New Scorecard</title>
+		<title>TarneitCricketClub - New Series</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 	</head>
 	<body>
 
-<!-- Navigation -->
+	<!-- Navigation -->
 			<?php require 'nav.php'; ?>
 
 		<!-- Main -->
@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Match Details - Venue</h2>
+						<h2>Modify Player Role</h2>
 					</header>
 				</div>
 			</section>
@@ -42,14 +42,10 @@
 					<div class="row">
 					<div class="6u 12u(3)">
 						<section>
-							<form method="post" action="matches_process.php">
+							<form method="post" action="modify_player_role_process.php">
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
-									</div>
-									
-										<div class="6u 12u$">
 												<?php
 													require_once ("settings.php"); //connection info
 													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -59,24 +55,22 @@
 														echo "<p>Database connection failure</p>"; // not in production script
 														die();
 													}
-														$sql_table_one="series";
-														$query = "SELECT SeriesId, SeriesName  FROM $sql_table_one";
+														$sql_table_one="player";
+														$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName  FROM $sql_table_one";
 
-														echo "<select name='series_id'>";											
+														echo "<select name='player_id'>";											
 														$result = mysqli_query($conn, $query);
-														echo "<option value='0'>Select Series</option>";
+														echo "<option value='0'>Select Player</option>";
 														if($result)
 														{
 															while($row = mysqli_fetch_assoc($result)) 
 															{ 
-															echo "<option value='{$row['SeriesId']}'>{$row['SeriesName']}</option>";
+															echo "<option value='{$row['PlayerId']}'>{$row['PlayerFirstName']}</option>";
 															} 
 														}	
 												?>
 											</select>
 											</div>
-									
-									
 									<div class="6u 12u$">
 												<?php
 													require_once ("settings.php"); //connection info
@@ -87,49 +81,37 @@
 														echo "<p>Database connection failure</p>"; // not in production script
 														die();
 													}
-														$sql_table_one="venue";
-														$query = "SELECT VenueId, VenueName  FROM $sql_table_one";
+														$sql_table_one="role";
+														$query = "SELECT RoleId, RoleDescription  FROM $sql_table_one";
 
-														echo "<select name='match_venue'>";											
+														echo "<select name='player_role_id'>";											
 														$result = mysqli_query($conn, $query);
-														echo "<option value='0'>Select Venue</option>";
+														echo "<option value='0'>Select Player Role</option>";
 														if($result)
 														{
 															while($row = mysqli_fetch_assoc($result)) 
 															{ 
-															echo "<option value='{$row['VenueId']}'>{$row['VenueName']}</option>";
+															echo "<option value='{$row['RoleId']}'>{$row['RoleDescription']}</option>";
 															} 
 														}	
 												?>
 											</select>
 											</div>
-																	
-									<div class="6u 12u$">
-										
-									</div>
-									<div class="6u 12u$">
-										
-									</div>
-									
-									</div>
-							
-							
-							<div class="12u$">
+									<div class="12u$">
 										<ul class="actions">
-											<li><input type="submit" value="Next - Umpires"  /></li>
+											<li><input type="submit" value="Submit"  /></li>
 											<li><input type="reset" value="Reset" class="special"/></li>
 										</ul>
-							</div>
+									</div>
+								</div>
 							</div>
 							</form>
 						</section>
 						</div>
-									
-						
 						
 						<?php 	
 						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Stored Series in our Database: </h5>";
+						echo"<h5>Available Players </h5>";
 						require_once ("settings.php"); //connection info
 						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 						
@@ -139,79 +121,42 @@
 						} 
 						else 
 						{			
-						$sql_table="series";		
+						$sql_table_one="player";	
+						$sql_table_two="player_role";
+						$sql_table_three="role";	
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>Series ID</th><th>Series Type</th><th>Series Title</th></tr>"; 
+						echo "<tr><th>ID</th><th>Name</th><th>Role 1</th><th>Role 2</th></tr>"; 
 						
-						$query = "SELECT SeriesId, SeriesTypeId, SeriesName FROM $sql_table ";
+						$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName, RoleDescription FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
 							$row = mysqli_fetch_assoc($result); 
 					
-							while($row) 
+							if($row) 
 							{ 
-							echo "<tr><td>{$row['SeriesId']}</td>"; 
-							echo "<td>{$row['SeriesTypeId']}</td>";
-							echo "<td>{$row['SeriesName']}</td></tr>"; 
+							echo "<tr><td>{$row['PlayerId']}</td>"; 
+							echo "<td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
+							echo "<td>{$row['RoleDescription']}</td>";
 							$row = mysqli_fetch_assoc($result); 
+							echo "<td>{$row['RoleDescription']}</td></tr>"; 
 							} 
 							echo "</table>";
 						}
 						mysqli_close($conn);
 						}
-						echo"</div>"
+						echo"</div>";
 						?>	
 						
-						<?php 	
-						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Stored Venues in our Database: </h5>";
-						require_once ("settings.php"); //connection info
-						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-						
-						if (!$conn)
-						{
-							echo "<p>Database connection failure</p>"; // not in production script
-						} 
-						else 
-						{			
-						$sql_table_one="venue";		
-						
-						
-						echo "<table border='1'>"; 
-						echo "<tr><th>Venue ID</th><th>Venue Name</th></tr>"; 
-						
-						$query = "SELECT VenueId, VenueName FROM $sql_table_one";
-										
-						$result = mysqli_query($conn, $query);
-						if($result){
-							$row = mysqli_fetch_assoc($result); 
-					
-							while($row) 
-							{ 
-							echo "<tr><td>{$row['VenueId']}</td>"; 
-							echo "<td>{$row['VenueName']}</td></tr>"; 
-							$row = mysqli_fetch_assoc($result); 
-							} 
-							echo "</table>";
-						}
-						mysqli_close($conn);
-						}
-						echo"</div>"
-						?>	
-						
-						</div>
-					</div>
-				</form>
-			</section>
+			</div>
+		</div>
 
 		<!-- Footer -->
-			<?php 
-				require 'footer.php'; 
-			?>
+		
+		<?php 
+			require 'footer.php'; 
+		?>
 
 	</body>
 </html>
-
-
