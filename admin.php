@@ -62,10 +62,13 @@
 									<h4>Modify</h4>
 									<a class="button fit" href="series_winner.php">Enter Series Winner</a>
 								</div>
+								</div>
+								<div class="row">
 								<div class="6u 12u(3)">
 									<h4>Details</h4>
 									<a class="button fit" href="view_team.php">Teams</a>
 									<a class="button fit" href="view_series.php">Series</a>
+									<a class="button fit" href="view_players.php">Players</a>
 								</div>
 								</div>
 							</div>
