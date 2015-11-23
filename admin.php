@@ -71,6 +71,10 @@
 									<a class="button fit" href="view_series.php">Series</a>
 									<a class="button fit" href="view_players.php">Players</a>
 								</div>
+								<div class="6u 12u(3)">
+									<h4>Delete</h4>
+									<a class="button fit" href="delete_umpire.php">Delete Umpire</a>
+								</div>
 								</div>
 							</div>
 					</div>
