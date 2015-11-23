@@ -106,9 +106,34 @@
 									mysqli_close($conn);
 									}
 									?>	
-									<div class="6u 12u$">
-										<input type="text" name="player_role_id" id="player_role_id" value="" placeholder="Role ID" required="required"  />
-									</div>
+									
+									<div class="6u 12u$(4)">
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="role";
+														$query = "SELECT RoleId, RoleDescription  FROM $sql_table_one";
+
+														echo "<select name='player_role_id'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Player Role</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['RoleId']}'>{$row['RoleDescription']}</option>";
+															} 
+														}	
+												?>
+											</select>
+											</div>
+								
 									
 									<div class="12u$">
 										<ul class="actions">

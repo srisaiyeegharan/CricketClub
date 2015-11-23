@@ -52,11 +52,12 @@
 		
 		
 		//check whether the form fields in the register form are set
-		if(isset($_POST["umpire_id_one"])) 
+		if(isset($_POST["umpire_id"])) 
 			{
-			$umpirelname = sanitise($_POST["umpire_id_one"]);
-			$umpirefname= sanitise($_POST["umpire_id_two"]);
-			$umpiredob= sanitise($_POST["umpire_id_three"]);
+			$umpirefname = sanitise($_POST["umpire_fname"]);
+			$umpireid= sanitise($_POST["umpire_id"]);
+			$umpirelname= sanitise($_POST["umpire_lname"]);
+			$umpiredob= sanitise($_POST["umpire_dob"]);
 			}
 			
 			$query = "INSERT INTO $sql_table (UmpireFirstName, UmpireLastName, UmpireDOB) VALUES ('$umpirefname', '$umpirelname', '$umpiredob')";

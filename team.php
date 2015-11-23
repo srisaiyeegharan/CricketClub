@@ -52,7 +52,30 @@
 												<input type="text" name="team_name" id="team_name" value="" placeholder="Team Name" required="required"/>									
 											</div>
 											<div class="6u 12u$(4)">
-												<input type="text" name="coach_id" id="coach_id" value="" placeholder="Coach ID" required="required" />
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="coach";
+														$query = "SELECT CoachId, CoachFirstName, CoachLastName FROM $sql_table_one";
+
+														echo "<select name='coach_id'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select Coach</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['CoachId']}'>{$row['CoachFirstName']} {$row['CoachLastName']}</option>";
+															} 
+														}	
+												?>
+											</select>
 											</div>
 										
 											<div class="12u$">
