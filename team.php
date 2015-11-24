@@ -46,7 +46,7 @@
 									<div class="container 100%">
 										<div class="row uniform 100%">
 											<div class="6u 12u$">
-												<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
+												<input type="hidden" name="team_id" id="team_id" value="" placeholder="Team ID" readonly="readonly" />
 											</div>
 											<div class="6u 12u$">
 												<input type="text" name="team_name" id="team_name" value="" placeholder="Team Name" required="required"/>									

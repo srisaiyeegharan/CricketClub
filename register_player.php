@@ -43,7 +43,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="player_id" id="player_id" value=""  readonly="readonly" />
+										<input type="hidden" name="player_id" id="player_id" value=""  readonly="readonly" />
 									</div>
 									<div class="6u 12u$(4)">
 										<input type="text" name="player_fname" id="player_fname" value="" placeholder="First Name" required="required"/>
@@ -95,7 +95,7 @@
 							while($row) 
 							{ 
 							echo"<div class='6u 12u$'>";
-										echo"<input type='text' name='player_id' id='player_ids' value='{$row['PlayerId']}'  readonly='readonly' />";
+										echo"<input type='hidden' name='player_id' id='player_ids' value='{$row['PlayerId']}'  readonly='readonly' />";
 							echo"</div>";
 							$row = mysqli_fetch_assoc($result); 
 							} 

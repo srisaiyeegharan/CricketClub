@@ -46,8 +46,34 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID"  />
+										
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="series";
+														$query = "SELECT SeriesId, SeriesName FROM $sql_table_one";
+
+														echo "<select name='series_id'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Series Title</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['SeriesId']}'>{$row['SeriesName']}</option>";
+															} 
+														}	
+												?>
+									</select>
 									</div>
+									
+
 									<div class="6u 12u$">
 										<input type="text" name="series_winner" id="series_winner" value="" placeholder="Winner" />
 									</div>

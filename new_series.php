@@ -46,7 +46,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
+										<input type="hidden" name="series_id" id="series_id" value="" placeholder="Series ID" readonly="readonly" />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="series_title" id="series_title" value="" placeholder="Series Title" required="required" />

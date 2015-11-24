@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Player Performance</h2>
+						<h2>Match Details - Player Performance</h2>
 					</header>
 				</div>
 			</section>
@@ -42,11 +42,40 @@
 							<form method="post" action="matches_player_details_process.php">
 							<div class="container 100%">
 								<div class="row uniform 50%">
+								
+									<?php 	
+									require_once ("settings.php"); //connection info
+									$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+									
+									if (!$conn)
+									{
+										echo "<p>Database connection failure</p>"; // not in production script
+									} 
+									else 
+									{			
+									$sql_table_one="matches";		
+									
+									$query = "SELECT MatchId FROM $sql_table_one  ORDER BY MatchId DESC LIMIT 1";
+													
+									$result = mysqli_query($conn, $query);
+									if($result){
+										$row = mysqli_fetch_assoc($result); 
+								
+										while($row) 
+										{ 
+										echo"<div class='6u 12u$'>";
+													echo"<input type='hidden' name='match_id' id='match_id' value='{$row['MatchId']}'  readonly='readonly' />";
+										echo"</div>";										
+										
+										$row = mysqli_fetch_assoc($result); 
+										} 
+									}
+									mysqli_close($conn);
+									}
+									?>
+									
 									<div class="6u 12u$">
-										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" />
-									</div>
-									<div class="6u 12u$">
-										<input type="text" name="team_id" id="team_id" value="" placeholder="Team ID" />
+										<input type="text" name="team_id" id="team_id" value="" placeholder="- Select Team -" />
 									</div>
 									
 									<!-- Player 1 --> 
