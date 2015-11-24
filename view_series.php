@@ -58,25 +58,24 @@
 						$sql_table_three="team";
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>Series ID</th><th>Series Type</th><th>Series Title</th><th>Host</th><th>Winner</th><th>Team One</th><th>Team Two</th></tr>"; 
+						echo "<tr><th>Series Type</th><th>Series Title</th><th>Host</th><th>Winner</th></tr>"; 
 						
-						$query = "SELECT SeriesId, SeriesTypeId, SeriesName, SeriesHost, SeriesWinner, TeamName FROM $sql_table_one NATURAL JOIN 
-						$sql_table_two NATURAL JOIN $sql_table_three";
+						$query = "SELECT ts.SeriesId, s.SeriesTypeId, s.SeriesName, s.SeriesHost, s.SeriesWinner, t.TeamName FROM series s NATURAL JOIN 
+						team_series ts NATURAL JOIN team t GROUP BY s.SeriesId";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
 							$row = mysqli_fetch_assoc($result); 
 					
-							if($row) 
+							while($row) 
 							{ 
-							echo "<tr><td>{$row['SeriesId']}</td>"; 
-							echo "<td>{$row['SeriesTypeId']}</td>";
+							echo "<tr><td>{$row['SeriesTypeId']}</td>";
 							echo "<td>{$row['SeriesName']}</td>";
 							echo "<td>{$row['SeriesHost']}</td>";
-							echo "<td>{$row['SeriesWinner']}</td>";
-							echo "<td>{$row['TeamName']}</td>";
+							echo "<td>{$row['SeriesWinner']}</td></tr>";
 							$row = mysqli_fetch_assoc($result); 
-							echo "<td>{$row['TeamName']}</td></tr>"; 
+							
+						
 							} 
 							echo "</table>";
 						}

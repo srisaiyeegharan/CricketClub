@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Series</h2>	
+						<h2>Players</h2>	
 					</header>
 					<?php 	
 						
@@ -52,23 +52,21 @@
 						
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>Player ID</th><th>Name</th><th>Date of Birth</th><th>Nationality</th><th>Role</th><th>Role</th></tr>"; 
+						echo "<tr><th>Name</th><th>Date of Birth</th><th>Nationality</th><th>Role</th></tr>"; 
 						
-						$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName, PlayerDOB, PlayerNationality, RoleDescription FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three";
+						$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName, PlayerDOB, PlayerNationality, RoleDescription FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three Group by PlayerId";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
 							$row = mysqli_fetch_assoc($result); 
 					
-							if($row) 
+							while($row) 
 							{ 
-							echo "<tr><td>{$row['PlayerId']}</td>"; 
-							echo "<td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
+							echo "<tr><td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
 							echo "<td>{$row['PlayerDOB']}</td>";
 							echo "<td>{$row['PlayerNationality']}</td>";
-							echo "<td>{$row['RoleDescription']}</td>";
-							$row = mysqli_fetch_assoc($result); 
 							echo "<td>{$row['RoleDescription']}</td></tr>"; 
+								$row = mysqli_fetch_assoc($result); 
 							} 
 							echo "</table>";
 						}

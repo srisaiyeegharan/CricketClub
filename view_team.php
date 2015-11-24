@@ -49,7 +49,7 @@
 						$sql_table_two="coach";
 						
 						echo "<table border='1'>"; 
-						echo "<tr><th>Team ID</th><th>Team Name</th><th>Team Coach</th></tr>"; 
+						echo "<tr><th>Team Name</th><th>Team Coach</th></tr>"; 
 						
 						$query = "SELECT TeamId, TeamName, CONCAT(CoachFirstName, ' ',CoachLastName) AS Coach FROM $sql_table_one NATURAL JOIN $sql_table_two ORDER BY TeamId DESC";
 										
@@ -59,8 +59,7 @@
 					
 							while($row) 
 							{ 
-							echo "<tr><td>{$row['TeamId']}</td>"; 
-							echo "<td>{$row['TeamName']}</td>"; 
+							echo "<tr><td>{$row['TeamName']}</td>"; 
 							echo "<td>{$row['Coach']}</td></tr>"; 
 							$row = mysqli_fetch_assoc($result); 
 							} 
