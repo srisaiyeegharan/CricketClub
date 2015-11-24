@@ -37,7 +37,7 @@
 					</header>
 
 					<div class="container 25%">
-						<a class="button fit" href="matches_player_details.php">Add another match player details</a>
+						<a class="button fit" href="matchess_player_details.php">Add another match player details</a>
 						<a class="button fit" href="admin.php">Club Management</a>
 					</div>
 				</div>

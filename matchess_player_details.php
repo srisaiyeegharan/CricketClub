@@ -39,7 +39,7 @@
 			
 		<!-- Form -->
 						<section>
-							<form method="post" action="matches_player_details_process.php">
+							<form method="post" action="matchess_player_details_process.php">
 							<div class="container 100%">
 								<div class="row uniform 50%">
 								

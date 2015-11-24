@@ -75,7 +75,7 @@
 			$result_two = mysqli_query($conn, $query_two);
 			if ($result_one && $result_two)
 			{
-				header("location:matches_player_details.php");
+				header("location:matchess_player_details.php");
 			}
 			else 
 			{

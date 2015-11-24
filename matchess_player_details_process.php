@@ -81,7 +81,7 @@
 				}
 				else
 				{
-					header("location:scorecard_successful.php");
+					header("location:scorecardd_successful.php");
 				}
 				
 		}
