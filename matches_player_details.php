@@ -75,6 +75,33 @@
 									?>
 									
 									<div class="6u 12u$">
+												<?php
+													require_once ("settings.php"); //connection info
+													$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+													
+													if (!$conn)
+													{
+														echo "<p>Database connection failure</p>"; // not in production script
+														die();
+													}
+														$sql_table_one="umpire";
+														$query = "SELECT UmpireId, UmpireFirstName, UmpireLastName  FROM $sql_table_one";
+
+														echo "<select name='team_id'>";											
+														$result = mysqli_query($conn, $query);
+														echo "<option value='0'>Select 1st Umpire</option>";
+														if($result)
+														{
+															while($row = mysqli_fetch_assoc($result)) 
+															{ 
+															echo "<option value='{$row['UmpireId']}'>{$row['UmpireFirstName']} {$row['UmpireLastName']}</option>";
+															} 
+														}	
+												?>
+									</select>
+									</div>
+									
+									<div class="6u 12u$">
 										<input type="text" name="team_id" id="team_id" value="" placeholder="- Select Team -" />
 									</div>
 									

@@ -66,7 +66,7 @@
 										while($row) 
 										{ 
 										echo"<div class='6u 12u$'>";
-													echo"<input type='text' name='player_id' id='player_id' value='{$row['PlayerId']}'  readonly='readonly' />";
+													echo"<input type='hidden' name='player_id' id='player_id' value='{$row['PlayerId']}'  readonly='readonly' />";
 										echo"</div>";										
 										
 										$row = mysqli_fetch_assoc($result); 
