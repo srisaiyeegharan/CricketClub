@@ -66,7 +66,7 @@
 										while($row) 
 										{ 
 										echo"<div class='6u 12u$'>";
-													echo"<input type='text' name='match_id' id='match_id' value='{$row['MatchId']}'  readonly='readonly' />";
+													echo"<input type='hidden' name='match_id' id='match_id' value='{$row['MatchId']}'  readonly='readonly' />";
 										echo"</div>";										
 										
 										$row = mysqli_fetch_assoc($result); 
@@ -237,6 +237,7 @@
 									</div>
 									
 								</div>
+								
 							</form>
 						</section>
 						</div>

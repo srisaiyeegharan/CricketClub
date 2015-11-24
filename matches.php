@@ -46,7 +46,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
+										<input type="hidden" name="match_id" id="match_id" value="" placeholder="Match ID" readonly="readonly" />
 									</div>
 									
 										<div class="6u 12u$">

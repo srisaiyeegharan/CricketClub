@@ -6,7 +6,7 @@
 						<li><a href="generic.php">About</a></li>
 						<li><a href="elements.php">TCC</a></li>
 						<li><a href="admin.php">Manage</a></li>
-						<li><a href="#" class="button special">Sign In</a></li>
+						<li><a href="#" class="button special">Sign Out</a></li>
 					</ul>
 				</nav>
 			</header>

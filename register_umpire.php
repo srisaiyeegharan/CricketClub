@@ -46,7 +46,7 @@
 							<div class="container 100%">
 								<div class="row uniform 100%">
 									<div class="6u 12u$">
-										<input type="text" name="umpire_id" id="umpire_id" value="" placeholder="Umpire ID" readonly="readonly" />
+										<input type="hidden" name="umpire_id" id="umpire_id" value="" placeholder="Umpire ID" readonly="readonly" />
 									</div>
 									<div class="6u 12u$">
 										<input type="text" name="umpire_fname" id="umpire_fname" value="" placeholder="First Name" required="required" />
