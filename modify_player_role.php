@@ -32,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Modify Player Role</h2>
+						<h2>Add Player Role</h2>
 					</header>
 				</div>
 			</section>
@@ -109,45 +109,7 @@
 						</section>
 						</div>
 						
-						<?php 	
-						echo"<div class='6u 12u(3)'>";
-						echo"<h5>Available Players </h5>";
-						require_once ("settings.php"); //connection info
-						$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-						
-						if (!$conn)
-						{
-							echo "<p>Database connection failure</p>"; // not in production script
-						} 
-						else 
-						{			
-						$sql_table_one="player";	
-						$sql_table_two="player_role";
-						$sql_table_three="role";	
-				
-						echo "<table border='1'>"; 
-						echo "<tr><th>Name</th><th>Role</th></tr>"; 
-						
-						$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName, RoleDescription FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three";
-										
-						$result = mysqli_query($conn, $query);
-						if($result){
-							$row = mysqli_fetch_assoc($result); 
 					
-							while($row) 
-							{ 
-							echo "<tr><td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
-							echo "<td>{$row['RoleDescription']}</td></tr>";
-							$row = mysqli_fetch_assoc($result); 			
-							}
-						
-							
-							echo "</table>";
-						}
-						mysqli_close($conn);
-						}
-						echo"</div>";
-						?>	
 						
 			</div>
 		</div>

@@ -58,7 +58,7 @@
 			$playerroleid= sanitise($_POST["player_role_id"]);
 			}
 			
-			$query = "UPDATE $sql_table SET RoleId = '$playerroleid' WHERE PlayerId = '$playerid'";
+			$query = "INSERT INTO $sql_table (PlayerId, RoleId) VALUES ('$playerid', '$playerroleid')";
 			$result = mysqli_query($conn, $query);
 			if ($result)
 			{
@@ -69,7 +69,7 @@
 				echo"<section id='main' class='wrapper'>";
 				echo"<div class='container'>";
 					echo"<header class='major'>";
-						echo"<h4>Please Enter a Non existing Venue ID</h4>";
+						echo"<h4>Oops something went wrong!</h4>";
 					echo"</header>";
 				echo"<div class='container 25%'>";
 				echo"<a class='button fit' href='modify_player_role.php'>Go Back</a>";
