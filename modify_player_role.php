@@ -126,7 +126,7 @@
 						$sql_table_three="role";	
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>ID</th><th>Name</th><th>Role 1</th><th>Role 2</th></tr>"; 
+						echo "<tr><th>Name</th><th>Role</th></tr>"; 
 						
 						$query = "SELECT PlayerId, PlayerFirstName, PlayerLastName, RoleDescription FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three";
 										
@@ -134,14 +134,14 @@
 						if($result){
 							$row = mysqli_fetch_assoc($result); 
 					
-							if($row) 
+							while($row) 
 							{ 
-							echo "<tr><td>{$row['PlayerId']}</td>"; 
-							echo "<td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
-							echo "<td>{$row['RoleDescription']}</td>";
-							$row = mysqli_fetch_assoc($result); 
-							echo "<td>{$row['RoleDescription']}</td></tr>"; 
-							} 
+							echo "<tr><td>{$row['PlayerFirstName']} {$row['PlayerLastName']} </td>";
+							echo "<td>{$row['RoleDescription']}</td></tr>";
+							$row = mysqli_fetch_assoc($result); 			
+							}
+						
+							
 							echo "</table>";
 						}
 						mysqli_close($conn);
