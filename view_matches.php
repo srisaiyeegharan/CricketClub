@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-</body>
-</html><!DOCTYPE html>
 <!--
 	Transit by TEMPLATED
 	templated.co @templatedco
@@ -40,7 +32,7 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Series</h2>	
+						<h2>Matches</h2>	
 					</header>
 					<?php 	
 						
@@ -54,14 +46,13 @@
 						else 
 						{			
 						$sql_table_one="series";	
-						$sql_table_two="team_series";
-						$sql_table_three="team";
+						$sql_table_two="matches";
+						$sql_table_three="match_team_details";
 				
 						echo "<table border='1'>"; 
-						echo "<tr><th>Series ID</th><th>Series Type</th><th>Series Title</th><th>Host</th><th>Winner</th><th>Team One</th><th>Team Two</th></tr>"; 
+						echo "<tr><th>Match ID</th><th>Series Title</th><th>Team One</th><th>Winner</th><th>Team One</th><th>Team Two</th></tr>"; 
 						
-						$query = "SELECT SeriesId, SeriesTypeId, SeriesName, SeriesHost, SeriesWinner, TeamName FROM $sql_table_one NATURAL JOIN 
-						$sql_table_two NATURAL JOIN $sql_table_three";
+						$query = "SELECT SeriesId, SeriesTypeId, SeriesName, SeriesHost, SeriesWinner, TeamName FROM $sql_table_one NATURAL JOIN $sql_table_two NATURAL JOIN $sql_table_three";
 										
 						$result = mysqli_query($conn, $query);
 						if($result){
